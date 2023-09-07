@@ -126,10 +126,12 @@ import {
       iconBg: "#E6DEDD",
       date: "December 2019 - January 2022",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        "Played a pivotal role in the development of a SASS product for the aviation domain, contributing to its architecture, design, and implementation.",
+        "Worked closely with stakeholders to gather requirements, prioritize features, and deliver regular product updates.",
+        "Implemented RESTful APIs, integrated third-party services, and optimized database performance to ensure seamless product functionality.",
+        "Collaborated with UI/UX designers to create intuitive and responsive user interfaces, resulting in a highly user-friendly product.",
+        "Assisted in scaling the product, ensuring high availability, fault tolerance, and system security.",
+        
       ],
     },
     {
@@ -139,10 +141,16 @@ import {
       iconBg: "#383E56",
       date: "Sep 2019 - Dec 2019",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+      
+
+"Joined the company as a Software Development Engineer Trainee and played a key role in the early stages of product development for AeroSimple.",
+"Assisted in laying the foundation for AeroSimple, contributing to initial codebase and architectural decisions.",
+"Gained valuable experience in software development and honed skills in React.js, Node.js, and other technologies.",
+"Adapted to the dynamic environment as the company transitioned into a separate entity for AeroSimple.",
+
+
+
+
       ],
     },
     {
@@ -152,10 +160,15 @@ import {
       iconBg: "#E6DEDD",
       date: "Jan 2019 - Sep 2019",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+        
+"Completed a frontend development internship focused on building responsive web interfaces using React.js, HTML, CSS, and Bootstrap.",
+"Developed and maintained the user interface of the company's website, ensuring a modern and visually appealing design.",
+"Implemented responsive design principles and integrated Bootstrap components for improved user experience and compatibility across devices.",
+"Collaborated with the design team to translate mockups and wireframes into functional web pages.",
+"Conducted usability testing and made necessary adjustments to optimize website performance and user engagement.",
+
+
+
       ],
     },
   ];
