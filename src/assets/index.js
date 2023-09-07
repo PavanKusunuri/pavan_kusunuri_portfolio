@@ -25,7 +25,10 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
-
+import oc_logo from "./company/OC_logo.jpg";
+import aero_logo from "./company/Aerosimple_logo.png"
+import imaginnovate_logo from "./company/imaginnovate.png"
+import uno_logo from "./company/UnoSimple_logo.png"
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
@@ -59,4 +62,8 @@ export {
   carrent,
   jobit,
   tripguide,
+  oc_logo,
+  imaginnovate_logo,
+  aero_logo,
+  uno_logo
 };

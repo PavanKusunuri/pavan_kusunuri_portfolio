@@ -20,6 +20,10 @@ import {
     carrent,
     jobit,
     tripguide,
+    oc_logo,
+    uno_logo,
+    aero_logo,
+    imaginnovate_logo
  } from "../assets";
   
   export const navLinks = [
@@ -103,22 +107,24 @@ import {
     {
       title: "Software Engineer",
       company_name: "Oracle Cerner",
-      icon: starbucks,
+      icon: oc_logo,
       iconBg: "#383E56",
       date: "January 2022 - Present",
       points: [
-        "Developing and maintaining web applications using React.js and other related technologies.",
-        "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-        "Implementing responsive design and ensuring cross-browser compatibility.",
-        "Participating in code reviews and providing constructive feedback to other developers.",
+       
+"Developed web applications in the health domain, leveraging React.js, Node.js, Ruby on Rails, HTML, CSS, and JavaScript.",
+"Collaborate with cross-functional teams to design, develop, and deploy user-friendly and scalable solutions that address critical healthcare challenges.",
+"Implement best practices for code quality, performance, and security, ensuring compliance with industry standards and regulations.",
+"Conduct regular code reviews and mentor junior developers to foster a culture of continuous learning and improvement.",
+"Utilize agile methodologies to deliver features, enhancements, and bug fixes on schedule and within budget.",
       ],
     },
     {
       title: "Software Development Engineer",
       company_name: "Aerosimple",
-      icon: tesla,
+      icon: aero_logo,
       iconBg: "#E6DEDD",
-      date: "Jan 2021 - Feb 2022",
+      date: "December 2019 - January 2022",
       points: [
         "Developing and maintaining web applications using React.js and other related technologies.",
         "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
@@ -129,7 +135,7 @@ import {
     {
       title: "Software Development Engineer Trainee",
       company_name: "UnoSimple",
-      icon: shopify,
+      icon: uno_logo,
       iconBg: "#383E56",
       date: "Sep 2019 - Dec 2019",
       points: [
@@ -142,7 +148,7 @@ import {
     {
       title: "Intern",
       company_name: "Imaginnovate",
-      icon: meta,
+      icon: imaginnovate_logo,
       iconBg: "#E6DEDD",
       date: "Jan 2019 - Sep 2019",
       points: [
