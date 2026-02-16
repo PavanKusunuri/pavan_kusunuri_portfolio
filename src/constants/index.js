@@ -1,243 +1,154 @@
 import {
-    mobile,
-    backend,
-    creator,
-    web,
-    javascript,
-    typescript,
-    html,
-    css,
-    reactjs,
-    redux,
-    tailwind,
-    nodejs,
-    mongodb,
-    git,
-    meta,
-    starbucks,
-    tesla,
-    shopify,
-    carrent,
-    jobit,
-    tripguide,
-    oc_logo,
-    uno_logo,
-    aero_logo,
-    imaginnovate_logo
- } from "../assets";
-  
-  export const navLinks = [
-    {
-      id: "about",
-      title: "About",
-    },
-    {
-      id: "work",
-      title: "Work",
-    },
-    {
-      id: "contact",
-      title: "Contact",
-    },
-  ];
-  
-  const services = [
-    {
-      title: "Web Developer",
-      icon: web,
-    },
-    {
-      title: "Frontend Developer",
-      icon: mobile,
-    },
-    {
-      title: "Backend Developer",
-      icon: backend,
-    },
-    {
-      title: "React Developer",
-      icon: creator,
-    },
-  ];
-  
-  const technologies = [
-    {
-      name: "HTML 5",
-      icon: html,
-    },
-    {
-      name: "CSS 3",
-      icon: css,
-    },
-    {
-      name: "JavaScript",
-      icon: javascript,
-    },
-    {
-      name: "TypeScript",
-      icon: typescript,
-    },
-    {
-      name: "React JS",
-      icon: reactjs,
-    },
-    {
-      name: "Redux Toolkit",
-      icon: redux,
-    },
-    {
-      name: "Tailwind CSS",
-      icon: tailwind,
-    },
-    {
-      name: "Node JS",
-      icon: nodejs,
-    },
-    {
-      name: "MongoDB",
-      icon: mongodb,
-    },
-    {
-      name: "git",
-      icon: git,
-    }
-  ];
-  
-  const experiences = [
-    {
-      title: "Software Engineer",
-      company_name: "Oracle Cerner",
-      icon: oc_logo,
-      iconBg: "#383E56",
-      date: "January 2022 - Present",
-      points: [
-       
-"Developed web applications in the health domain, leveraging React.js, Node.js, Ruby on Rails, HTML, CSS, and JavaScript.",
-"Collaborate with cross-functional teams to design, develop, and deploy user-friendly and scalable solutions that address critical healthcare challenges.",
-"Implement best practices for code quality, performance, and security, ensuring compliance with industry standards and regulations.",
-"Conduct regular code reviews and mentor junior developers to foster a culture of continuous learning and improvement.",
-"Utilize agile methodologies to deliver features, enhancements, and bug fixes on schedule and within budget.",
-      ],
-    },
-    {
-      title: "Software Development Engineer",
-      company_name: "Aerosimple",
-      icon: aero_logo,
-      iconBg: "#E6DEDD",
-      date: "December 2019 - January 2022",
-      points: [
-        "Played a pivotal role in the development of a SASS product for the aviation domain, contributing to its architecture, design, and implementation.",
-        "Worked closely with stakeholders to gather requirements, prioritize features, and deliver regular product updates.",
-        "Implemented RESTful APIs, integrated third-party services, and optimized database performance to ensure seamless product functionality.",
-        "Collaborated with UI/UX designers to create intuitive and responsive user interfaces, resulting in a highly user-friendly product.",
-        "Assisted in scaling the product, ensuring high availability, fault tolerance, and system security.",
-        
-      ],
-    },
-    {
-      title: "Software Development Engineer Trainee",
-      company_name: "UnoSimple",
-      icon: uno_logo,
-      iconBg: "#383E56",
-      date: "Sep 2019 - Dec 2019",
-      points: [
-      
+  mobile,
+  backend,
+  creator,
+  web,
+  javascript,
+  typescript,
+  html,
+  css,
+  reactjs,
+  redux,
+  tailwind,
+  nodejs,
+  mongodb,
+  git,
+  carrent,
+  jobit,
+  tripguide,
+  oc_logo,
+  aero_logo,
+} from "../assets";
 
-"Joined the company as a Software Development Engineer Trainee and played a key role in the early stages of product development for AeroSimple.",
-"Assisted in laying the foundation for AeroSimple, contributing to initial codebase and architectural decisions.",
-"Gained valuable experience in software development and honed skills in React.js, Node.js, and other technologies.",
-"Adapted to the dynamic environment as the company transitioned into a separate entity for AeroSimple.",
+/* ---------------- NAVIGATION ---------------- */
 
+export const navLinks = [
+  { id: "about", title: "About" },
+  { id: "work", title: "Work" },
+  { id: "contact", title: "Contact" },
+];
 
+/* ---------------- SERVICES ---------------- */
 
+export const services = [
+  {
+    title: "Senior Software Engineer",
+    icon: web,
+  },
+  {
+    title: "Full-Stack Engineer",
+    icon: mobile,
+  },
+  {
+    title: "Frontend Systems Engineer",
+    icon: creator,
+  },
+  {
+    title: "Backend & API Engineer",
+    icon: backend,
+  },
+];
 
-      ],
-    },
-    {
-      title: "Intern",
-      company_name: "Imaginnovate",
-      icon: imaginnovate_logo,
-      iconBg: "#E6DEDD",
-      date: "Jan 2019 - Sep 2019",
-      points: [
-        
-"Completed a frontend development internship focused on building responsive web interfaces using React.js, HTML, CSS, and Bootstrap.",
-"Developed and maintained the user interface of the company's website, ensuring a modern and visually appealing design.",
-"Implemented responsive design principles and integrated Bootstrap components for improved user experience and compatibility across devices.",
-"Collaborated with the design team to translate mockups and wireframes into functional web pages.",
-"Conducted usability testing and made necessary adjustments to optimize website performance and user engagement.",
+/* ---------------- TECHNOLOGIES ---------------- */
 
+export const technologies = [
+  { name: "HTML5", icon: html },
+  { name: "CSS3", icon: css },
+  { name: "JavaScript (ES6+)", icon: javascript },
+  { name: "TypeScript", icon: typescript },
+  { name: "React.js", icon: reactjs },
+  { name: "Redux Toolkit", icon: redux },
+  { name: "Tailwind CSS", icon: tailwind },
+  { name: "Node.js", icon: nodejs },
+  { name: "Django / Django REST Framework", icon: backend },
+  { name: "PostgreSQL / MongoDB", icon: mongodb },
+  { name: "Git & Version Control", icon: git },
+];
 
+/* ---------------- EXPERIENCE ---------------- */
 
-      ],
-    },
-  ];
-  
-  
-  const projects = [
-    {
-      name: "Meta Verse",
-      description:
-        "A Website which was built using latest next.js and tailwind css to render beautiful animations used framermotion.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "mongodb",
-          color: "green-text-gradient",
-        },
-        {
-          name: "tailwind",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: carrent,
-      source_code_link: "https://github.com/PavanKusunuri/metaverse"
-    },
-    {
-      name: "Work Place",
-      description:
-        "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-      tags: [
-        {
-          name: "react",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "nodejs",
-          color: "green-text-gradient",
-        },
-        {
-          name: "express.js",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: jobit,
-      source_code_link: "https://github.com/PavanKusunuri/Job_portal",
-    },
-    {
-      name: "Threads",
-      description:
-        "An Social Platform which was developed for users to register and add communities and maintain communites like Threads App created by Meta.Our threads was built using Next.js, React.js, Node.js and Mongodb",
-      tags: [
-        {
-          name: "nextjs",
-          color: "blue-text-gradient",
-        },
-        {
-          name: "reactjs",
-          color: "green-text-gradient",
-        },
-        {
-          name: "nodejs",
-          color: "pink-text-gradient",
-        },
-      ],
-      image: tripguide,
-      source_code_link: "https://github.com/PavanKusunuri/threads",
-    },
-  ];
-  
-  export { services, technologies, experiences, projects };
+export const experiences = [
+  {
+    title: "Senior Software Engineer",
+    company_name: "ValueLabs",
+    icon: web, // replace with ValueLabs logo if you add one later
+    iconBg: "#1E293B",
+    date: "February 2024 - Present",
+    points: [
+      "Developing and enhancing internal product platforms using React.js and Node.js with a focus on scalability and maintainability.",
+      "Designing and implementing secure RESTful APIs for enterprise applications.",
+      "Building reusable UI components and modular frontend architecture to improve development efficiency.",
+      "Identifying and resolving performance bottlenecks in production systems.",
+      "Handling production issues and mentoring junior engineers through code reviews.",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company_name: "Oracle Cerner",
+    icon: oc_logo,
+    iconBg: "#2E3A59",
+    date: "January 2022 - February 2024",
+    points: [
+      "Worked on enterprise healthcare platforms supporting 10k–100k users.",
+      "Developed and maintained internal modules for business-critical workflows.",
+      "Designed and consumed REST APIs with authentication and authorization mechanisms.",
+      "Resolved production issues to ensure system reliability and compliance.",
+      "Collaborated with cross-functional teams in a regulated enterprise environment.",
+    ],
+  },
+  {
+    title: "Software Development Engineer",
+    company_name: "AeroSimple (UnoSimple Group)",
+    icon: aero_logo,
+    iconBg: "#E6DEDD",
+    date: "December 2019 - January 2022",
+    points: [
+      "Contributed to early-stage SaaS product development in the aviation domain.",
+      "Designed and built RESTful APIs using Django REST Framework.",
+      "Developed scalable React components for core product workflows.",
+      "Owned critical modules including Work Order Management and Asset Management.",
+      "Worked closely with product stakeholders to translate business requirements into technical solutions.",
+    ],
+  },
+];
+
+/* ---------------- PROJECTS ---------------- */
+
+export const projects = [
+  {
+    name: "Metaverse Experience",
+    description:
+      "A modern interactive web experience built using Next.js, Tailwind CSS, and Framer Motion, focusing on smooth animations and responsive UI design.",
+    tags: [
+      { name: "nextjs", color: "blue-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "framer-motion", color: "green-text-gradient" },
+    ],
+    image: carrent,
+    source_code_link: "https://github.com/PavanKusunuri/metaverse",
+  },
+  {
+    name: "WorkPlace – Job Discovery Platform",
+    description:
+      "A full-stack web application enabling users to search job listings, view salary estimates, and discover opportunities based on location.",
+    tags: [
+      { name: "react", color: "blue-text-gradient" },
+      { name: "nodejs", color: "green-text-gradient" },
+      { name: "express", color: "pink-text-gradient" },
+    ],
+    image: jobit,
+    source_code_link: "https://github.com/PavanKusunuri/Job_portal",
+  },
+  {
+    name: "Threads – Community Platform",
+    description:
+      "A social platform inspired by Meta Threads, allowing users to create communities and manage discussions, built using Next.js, React, Node.js, and MongoDB.",
+    tags: [
+      { name: "nextjs", color: "blue-text-gradient" },
+      { name: "react", color: "green-text-gradient" },
+      { name: "mongodb", color: "pink-text-gradient" },
+    ],
+    image: tripguide,
+    source_code_link: "https://github.com/PavanKusunuri/threads",
+  },
+];
