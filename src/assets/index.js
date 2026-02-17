@@ -28,7 +28,7 @@ import tesla from "./company/tesla.png";
 import oc_logo from "./company/OC_logo.jpg";
 import aero_logo from "./company/Aerosimple_logo.png"
 import imaginnovate_logo from "./company/imaginnovate.png"
-import uno_logo from "./company/Unosimple_logo.png"
+import uno_logo from "./company/Unosimple_logo.png";
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
