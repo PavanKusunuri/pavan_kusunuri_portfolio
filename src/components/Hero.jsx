@@ -11,7 +11,7 @@ const Hero = () => {
         min-h-screen gap-10`}
       >
         {/* LEFT: Text Content */}
-        <div className="flex-1 flex flex-row items-start gap-5">
+        <div className="flex-1 mt-20 flex flex-row items-start gap-5">
           {/* Vertical Accent */}
           <div className="flex flex-col justify-center items-center mt-2">
             <div className="w-5 h-5 rounded-full bg-[#915EFF]" />
