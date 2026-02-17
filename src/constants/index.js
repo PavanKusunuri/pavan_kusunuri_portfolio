@@ -115,6 +115,8 @@ export const experiences = [
 
 /* ---------------- PROJECTS ---------------- */
 
+/* ---------------- PROJECTS ---------------- */
+
 export const projects = [
   {
     name: "Metaverse Experience",
@@ -141,15 +143,17 @@ export const projects = [
     source_code_link: "https://github.com/PavanKusunuri/Job_portal",
   },
   {
-    name: "Threads – Community Platform",
+    name: "GlobalCalqulate – Financial Calculator Platform",
     description:
-      "A social platform inspired by Meta Threads, allowing users to create communities and manage discussions, built using Next.js, React, Node.js, and MongoDB.",
+      "A production-grade financial calculator platform designed to help users make informed decisions across investments, loans, and cost-of-living scenarios. Built with a focus on accurate computation logic, scalable architecture, SEO optimization, and a clean, user-friendly interface.",
     tags: [
-      { name: "nextjs", color: "blue-text-gradient" },
-      { name: "react", color: "green-text-gradient" },
-      { name: "mongodb", color: "pink-text-gradient" },
+      { name: "react", color: "blue-text-gradient" },
+      { name: "nextjs", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "seo", color: "blue-text-gradient" },
     ],
-    image: tripguide,
-    source_code_link: "https://github.com/PavanKusunuri/threads",
+    image: tripguide, // replace with GlobalCalqulate image if available
+    source_code_link: "https://www.globalcalqulate.com",
   },
 ];
+
