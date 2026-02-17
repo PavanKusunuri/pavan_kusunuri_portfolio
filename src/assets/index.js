@@ -32,6 +32,7 @@ import uno_logo from "./company/UnoSimple_logo.png"
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import Valuelabs_logo from "./company/ValueLabs.jpg";
 
 export {
   logo,
@@ -65,5 +66,6 @@ export {
   oc_logo,
   imaginnovate_logo,
   aero_logo,
-  uno_logo
+  uno_logo,
+  Valuelabs_logo,
 };

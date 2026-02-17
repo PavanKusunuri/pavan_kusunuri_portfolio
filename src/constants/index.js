@@ -18,6 +18,7 @@ import {
   tripguide,
   oc_logo,
   aero_logo,
+  Valuelabs_logo,
 } from "../assets";
 
 /* ---------------- NAVIGATION ---------------- */
@@ -71,7 +72,7 @@ export const experiences = [
   {
     title: "Senior Software Engineer",
     company_name: "ValueLabs",
-    icon: web, // replace with ValueLabs logo if you add one later
+    icon: Valuelabs_logo, // replace with ValueLabs logo if you add one later
     iconBg: "#1E293B",
     date: "February 2024 - Present",
     points: [
