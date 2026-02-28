@@ -13,6 +13,8 @@ import {
   nodejs,
   mongodb,
   git,
+  figma,
+  docker,
   carrent,
   jobit,
   tripguide,
@@ -20,6 +22,14 @@ import {
   aero_logo,
   Valuelabs_logo,
 } from "../assets";
+
+// CDN icon URLs for skills without local images (devicons CDN)
+const DEVICON = "https://cdn.jsdelivr.net/gh/devicons/devicon/icons";
+const pythonIcon = `${DEVICON}/python/python-original.svg`;
+const djangoIcon = `${DEVICON}/django/django-plain.svg`;
+const postgresIcon = `${DEVICON}/postgresql/postgresql-original.svg`;
+const awsIcon = `${DEVICON}/amazonwebservices/amazonwebservices-original-wordmark.svg`;
+const javaIcon = `${DEVICON}/java/java-original.svg`;
 
 /* ---------------- NAVIGATION ---------------- */
 
@@ -32,22 +42,10 @@ export const navLinks = [
 /* ---------------- SERVICES ---------------- */
 
 export const services = [
-  {
-    title: "Senior Software Engineer",
-    icon: web,
-  },
-  {
-    title: "Full-Stack Engineer",
-    icon: mobile,
-  },
-  {
-    title: "Frontend Systems Engineer",
-    icon: creator,
-  },
-  {
-    title: "Backend & API Engineer",
-    icon: backend,
-  },
+  { title: "Senior Software Engineer", icon: web },
+  { title: "Full-Stack Engineer", icon: mobile },
+  { title: "Frontend Systems Engineer", icon: creator },
+  { title: "Backend & API Engineer", icon: backend },
 ];
 
 /* ---------------- TECHNOLOGIES ---------------- */
@@ -55,15 +53,20 @@ export const services = [
 export const technologies = [
   { name: "HTML5", icon: html },
   { name: "CSS3", icon: css },
-  { name: "JavaScript (ES6+)", icon: javascript },
+  { name: "JavaScript", icon: javascript },
   { name: "TypeScript", icon: typescript },
   { name: "React.js", icon: reactjs },
-  { name: "Redux Toolkit", icon: redux },
+  { name: "Redux", icon: redux },
   { name: "Tailwind CSS", icon: tailwind },
   { name: "Node.js", icon: nodejs },
-  { name: "Django / Django REST Framework", icon: backend },
-  { name: "PostgreSQL / MongoDB", icon: mongodb },
-  { name: "Git & Version Control", icon: git },
+  { name: "Python", icon: pythonIcon },
+  { name: "Django / DRF", icon: djangoIcon },
+  { name: "PostgreSQL", icon: postgresIcon },
+  { name: "MongoDB", icon: mongodb },
+  { name: "Docker", icon: docker },
+  { name: "AWS", icon: awsIcon },
+  { name: "Git", icon: git },
+  { name: "Figma", icon: figma },
 ];
 
 /* ---------------- EXPERIENCE ---------------- */

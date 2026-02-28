@@ -7,35 +7,24 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { downloadResume } from "../utils/resumeDownload";
 
-// Lazy-load EarthCanvas to defer three.js loading
 const EarthCanvas = lazy(() =>
   import("./canvas").then((mod) => ({ default: mod.EarthCanvas })),
 );
 
 const Contact = () => {
   const formRef = useRef();
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
+  const [sent, setSent] = useState(false);
 
   const handleChange = (e) => {
-    const { target } = e;
-    const { name, value } = target;
-
-    setForm({
-      ...form,
-      [name]: value,
-    });
+    const { name, value } = e.target;
+    setForm((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -49,107 +38,131 @@ const Contact = () => {
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        },
-      );
+      .then(() => {
+        setLoading(false);
+        setSent(true);
+        setForm({ name: "", email: "", message: "" });
+      })
+      .catch((err) => {
+        setLoading(false);
+        console.error(err);
+        alert("Something went wrong. Please try again.");
+      });
   };
 
   return (
-    <div
-      className={`xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden`}
-    >
+    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
+      {/* Form */}
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-black-100 p-8 rounded-2xl"
+        variants={slideIn("left", "tween", 0.2, 0.8)}
+        className="flex-[0.75] rounded-2xl p-8 sm:p-10"
+        style={{
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(255,255,255,0.07)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+        }}
       >
         <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+        <h3 className={`${styles.sectionHeadText} mt-1`}>Contact.</h3>
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-12 flex flex-col gap-8"
-        >
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Name</span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your good name?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="What's your web address?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-          <label className="flex flex-col">
-            <span className="text-white font-medium mb-4">Your Message</span>
-            <textarea
-              rows={7}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What you want to say?"
-              className="bg-tertiary py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
-            />
-          </label>
-
-          <button
-            type="submit"
-            className="bg-tertiary py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary hover:bg-opacity-80 transition-all"
+        {sent ? (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="mt-12 text-center"
           >
-            {loading ? "Sending..." : "Send"}
-          </button>
-
-          <div className="flex gap-4 pt-4 flex-wrap">
-            <a
-              href="#about"
-              className="text-secondary hover:text-white transition-colors text-sm"
-            >
-              ↑ Back to top
-            </a>
+            <div className="text-4xl mb-4">👋</div>
+            <h4 className="text-white text-[20px] font-semibold tracking-tight mb-2">
+              Message Sent!
+            </h4>
+            <p className="text-[rgba(255,255,255,0.5)] text-[14px]">
+              Thanks for reaching out. I&apos;ll get back to you soon.
+            </p>
             <button
-              type="button"
-              onClick={downloadResume}
-              className="bg-[#915EFF] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary hover:bg-[#7B4FD6] transition-all"
+              onClick={() => setSent(false)}
+              className="mt-6 apple-btn glass text-white px-6 py-2 text-[14px]"
             >
-              ⬇ Download Resume
+              Send another
             </button>
-          </div>
-        </form>
+          </motion.div>
+        ) : (
+          <form ref={formRef} onSubmit={handleSubmit} className="mt-10 flex flex-col gap-6">
+            <label className="flex flex-col gap-2">
+              <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
+                Name
+              </span>
+              <input
+                type="text"
+                name="name"
+                value={form.name}
+                onChange={handleChange}
+                required
+                placeholder="Your name"
+                className="apple-input"
+              />
+            </label>
+
+            <label className="flex flex-col gap-2">
+              <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
+                Email
+              </span>
+              <input
+                type="email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+                required
+                placeholder="your@email.com"
+                className="apple-input"
+              />
+            </label>
+
+            <label className="flex flex-col gap-2">
+              <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
+                Message
+              </span>
+              <textarea
+                rows={6}
+                name="message"
+                value={form.message}
+                onChange={handleChange}
+                required
+                placeholder="What would you like to discuss?"
+                className="apple-input resize-none"
+              />
+            </label>
+
+            <div className="flex flex-wrap gap-3 pt-2">
+              <button
+                type="submit"
+                disabled={loading}
+                className="apple-btn apple-btn-primary px-8 py-3 text-[15px] disabled:opacity-60"
+              >
+                {loading ? "Sending…" : "Send Message"}
+              </button>
+              <button
+                type="button"
+                onClick={downloadResume}
+                className="apple-btn glass text-white px-6 py-3 text-[14px]"
+              >
+                ⬇ Download Resume
+              </button>
+            </div>
+          </form>
+        )}
       </motion.div>
 
+      {/* Earth */}
       <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
+        variants={slideIn("right", "tween", 0.2, 0.8)}
+        className="xl:flex-1 xl:h-auto md:h-[550px] h-[300px]"
       >
         <Suspense
-          fallback={<div className="w-full h-full bg-black-100 rounded-2xl" />}
+          fallback={
+            <div className="w-full h-full rounded-2xl glass animate-pulse" />
+          }
         >
           <EarthCanvas />
         </Suspense>
