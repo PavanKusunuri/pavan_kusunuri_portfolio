@@ -20,9 +20,7 @@ const Navbar = () => {
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-4 fixed top-0 z-20 transition-all duration-300 ${
-        scrolled
-          ? "glass-dark shadow-glass"
-          : "bg-transparent"
+        scrolled ? "glass-dark shadow-glass" : "bg-transparent"
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -89,7 +87,9 @@ const Navbar = () => {
 
           <div
             className={`${
-              !toggle ? "opacity-0 pointer-events-none translate-y-2" : "opacity-100 translate-y-0"
+              !toggle
+                ? "opacity-0 pointer-events-none translate-y-2"
+                : "opacity-100 translate-y-0"
             } transition-all duration-200 ease-out glass-dark absolute top-16 right-4 mx-0 my-0 min-w-[200px] z-30 rounded-2xl p-5`}
           >
             <ul className="list-none flex flex-col gap-4">

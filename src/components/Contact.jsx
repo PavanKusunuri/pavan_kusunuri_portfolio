@@ -88,7 +88,11 @@ const Contact = () => {
             </button>
           </motion.div>
         ) : (
-          <form ref={formRef} onSubmit={handleSubmit} className="mt-10 flex flex-col gap-6">
+          <form
+            ref={formRef}
+            onSubmit={handleSubmit}
+            className="mt-10 flex flex-col gap-6"
+          >
             <label className="flex flex-col gap-2">
               <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
                 Name
