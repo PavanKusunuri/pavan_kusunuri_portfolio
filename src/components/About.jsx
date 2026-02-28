@@ -50,8 +50,8 @@ const About = () => {
       >
         Senior Software Engineer with over 6 years of experience building and
         supporting enterprise and SaaS web applications across healthcare and
-        aviation domains. Iâ€™ve delivered production-critical features
-        end-to-end at companies like{" "}
+        aviation domains. I've delivered production-critical features end-to-end
+        at companies like{" "}
         <span className="text-[#a78bfa] font-medium">ValueLabs</span>,{" "}
         <span className="text-[#a78bfa] font-medium">Oracle Cerner</span>, and{" "}
         <span className="text-[#a78bfa] font-medium">AeroSimple</span>, with

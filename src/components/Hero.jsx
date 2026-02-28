@@ -7,7 +7,7 @@ const EASE = [0.16, 1, 0.3, 1];
 const Hero = () => {
   return (
     <section className="relative w-full min-h-screen mx-auto overflow-hidden">
-      {/* Ambient glow blobs â€“ Apple-style */}
+      {/* Ambient glow blobs - Apple-style */}
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 overflow-hidden"
@@ -60,7 +60,7 @@ const Hero = () => {
               transition={{ duration: 0.65, delay: 0.1, ease: EASE }}
               className={`${styles.heroHeadText}`}
             >
-              Hi, Iâ€™m <span className="gradient-text">Pavan Kusunuri</span>
+              Hi, I'm <span className="gradient-text">Pavan Kusunuri</span>
             </motion.h1>
 
             <motion.p
@@ -80,8 +80,9 @@ const Hero = () => {
               transition={{ duration: 0.65, delay: 0.3, ease: EASE }}
               className="mt-5 text-[rgba(255,255,255,0.55)] max-w-md leading-relaxed text-[15px]"
             >
-              React Â· Node.js Â· Python Â· API-driven systems Â· Performance
-              optimization Â· End-to-end feature ownership
+              React &middot; Node.js &middot; Python &middot; API-driven systems
+              &middot; Performance optimization &middot; End-to-end feature
+              ownership
             </motion.p>
 
             <motion.div
