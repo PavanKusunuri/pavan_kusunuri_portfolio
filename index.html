@@ -4,7 +4,22 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pavan</title>
+    <title>Pavan Kusunuri – Full-Stack Engineer</title>
+
+    <!-- Preconnect to font origins so the TCP/TLS handshake is done early -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- Load Inter font via <link> instead of CSS @import (non-render-blocking) -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    />
+
+    <!-- Preload the hero 3D model so it starts downloading before JS executes -->
+    <link rel="preload" as="fetch" crossorigin href="/desktop_pc/scene.gltf" />
+
+    <!-- Preconnect to icon CDN used by tech-stack constants -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   </head>
   <body>
     <div id="root"></div>

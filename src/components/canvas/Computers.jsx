@@ -53,13 +53,14 @@ const ComputersCanvas = () => {
     };
   }, []);
 
+  // Stable GL config – defined outside render to avoid re-creating the
+  // WebGL renderer on every parent re-render.
   return (
     <Canvas
       frameloop="demand"
       shadows
       dpr={[1, 2]}
       camera={{ position: [20, 3, 5], fov: 25 }}
-      gl={{}}
     >
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls
@@ -73,6 +74,6 @@ const ComputersCanvas = () => {
       <Preload all />
     </Canvas>
   );
-};
+};;
 
 export default ComputersCanvas;

@@ -51,11 +51,14 @@ const Contact = () => {
   };
 
   return (
-    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
+    // Layout switches to side-by-side at lg (1024px) instead of xl (1280px).
+    // Previously the Earth globe was stacked above the form on tablets all
+    // the way up to 1279px, needlessly dominating vertical screen space.
+    <div className="lg:mt-12 flex lg:flex-row flex-col-reverse gap-10 overflow-hidden">
       {/* Form */}
       <motion.div
         variants={slideIn("left", "tween", 0.2, 0.8)}
-        className="flex-[0.75] rounded-2xl p-8 sm:p-10"
+        className="lg:flex-[0.75] w-full rounded-2xl p-6 sm:p-8 lg:p-10"
         style={{
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.07)",
@@ -161,7 +164,7 @@ const Contact = () => {
       {/* Earth */}
       <motion.div
         variants={slideIn("right", "tween", 0.2, 0.8)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[300px]"
+        className="lg:flex-1 lg:h-auto md:h-[420px] h-[280px]"
       >
         <Suspense
           fallback={

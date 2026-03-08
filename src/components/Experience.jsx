@@ -23,7 +23,10 @@ const ExperienceCard = ({ experience }) => {
         borderRadius: "16px",
         boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
         color: "#fff",
-        padding: "24px 28px",
+        // clamp gives mobile-friendly padding (16px) that expands on larger
+        // screens (up to 28px). Previously the hardcoded 28px horizontal
+        // padding was tight on 320px phones and bypassed Tailwind entirely.
+        padding: "20px clamp(16px, 4vw, 28px)",
       }}
       contentArrowStyle={{
         borderRight: "7px solid rgba(124,58,237,0.4)",

@@ -1,10 +1,24 @@
-﻿import { motion } from "framer-motion";
+﻿import { useEffect, useState } from "react";
+import { motion } from "framer-motion";
 import { styles } from "../styles";
 import { ComputersCanvas } from "./canvas";
 
 const EASE = [0.16, 1, 0.3, 1];
 
 const Hero = () => {
+  // Track breakpoint in JS so we mount only ONE ComputersCanvas.
+  // display:none does not prevent mounting – both instances would allocate
+  // separate WebGL contexts and load the GLTF model twice.
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 767px)");
+    setIsMobile(mq.matches);
+    const handler = (e) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
   return (
     <section className="relative w-full min-h-screen mx-auto overflow-hidden">
       {/* Ambient glow blobs - Apple-style */}
@@ -23,9 +37,9 @@ const Hero = () => {
       >
         {/* LEFT: Text Content */}
         <div className="flex-1 flex flex-row items-start gap-5">
-          {/* Accent bar */}
+          {/* Accent bar – hidden on small screens to save horizontal space */}
           <div
-            className="flex flex-col justify-center items-center mt-2"
+            className="hidden xs:flex flex-col justify-center items-center mt-2"
             aria-hidden
           >
             <motion.div
@@ -107,22 +121,23 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* RIGHT: 3D Canvas */}
+        {/* 3D Canvas – single instance conditionally sized by breakpoint.
+             Previously two <ComputersCanvas> nodes were mounted simultaneously
+             (one hidden with CSS), wasting two WebGL contexts and two GLTF
+             downloads. Now only one canvas is ever in the DOM. */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: isMobile ? 1 : 0.96 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.3, ease: EASE }}
-          className="hidden md:flex flex-1 h-[500px] items-center justify-center"
-        >
-          <ComputersCanvas />
-        </motion.div>
-
-        {/* Mobile canvas */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.4, ease: EASE }}
-          className="md:hidden w-full h-[300px]"
+          transition={{
+            duration: 0.8,
+            delay: isMobile ? 0.4 : 0.3,
+            ease: EASE,
+          }}
+          className={
+            isMobile
+              ? "w-full h-[300px]"
+              : "flex flex-1 h-[500px] items-center justify-center"
+          }
         >
           <ComputersCanvas />
         </motion.div>

@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, { useMemo } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -16,15 +16,22 @@ const ProjectCard = ({
   image,
   source_code_link,
 }) => {
+  // Pre-compute the variant object so Framer Motion receives the same
+  // reference across re-renders rather than a brand-new object each time.
+  const cardVariants = useMemo(
+    () => fadeIn("up", "tween", index * 0.15, 0.5),
+    [index],
+  );
+
   return (
-    <motion.div
-      variants={fadeIn("up", "tween", index * 0.15, 0.5)}
-      className="w-full sm:w-[340px]"
-    >
+    <motion.div variants={cardVariants} className="w-full sm:w-[340px]">
       <Tilt
         tiltMaxAngleDegrees={8}
         scale={1.02}
         transitionSpeed={600}
+        // gyroscope enables tilt via device-orientation on touch devices
+        // so mobile users get the same parallax card feel as desktop.
+        gyroscope={true}
         className="h-full"
       >
         <div

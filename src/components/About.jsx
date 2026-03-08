@@ -1,4 +1,4 @@
-﻿import React from "react";
+﻿import React, { useMemo } from "react";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
@@ -8,15 +8,25 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => {
+  // useMemo prevents a new variant object from being created on every render,
+  // which would cause Framer Motion to re-run its diffing logic unnecessarily.
+  const cardVariants = useMemo(
+    () => fadeIn("right", "tween", index * 0.15, 0.5),
+    [index],
+  );
+
   return (
     <Tilt
       tiltMaxAngleDegrees={10}
       scale={1.03}
       transitionSpeed={600}
+      // gyroscope enables the tilt effect on mobile via device-orientation events,
+      // giving touch users the same visual feedback as mouse users on desktop.
+      gyroscope={true}
       className="xs:w-[230px] w-full"
     >
       <motion.div
-        variants={fadeIn("right", "tween", index * 0.15, 0.5)}
+        variants={cardVariants}
         className="w-full p-[1px] rounded-2xl"
         style={{
           background:

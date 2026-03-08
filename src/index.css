@@ -1,4 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap");
+/* Google Fonts are now loaded via <link> in index.html (non-render-blocking).
+   The @import below has been removed to eliminate the render-blocking request. */
 
 @tailwind base;
 @tailwind components;
@@ -10,10 +11,19 @@
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Inter", "SF Pro Display",
     "Segoe UI", sans-serif;
-  scroll-behavior: smooth;
+  /* scroll-behavior removed from * – applying it universally triggers
+     smooth-scroll on every overflow container, causing jank on inner
+     scroll areas. Applied only to html below, guarded by prefers-reduced-motion. */
   color-scheme: dark;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scoped smooth scrolling – respects user motion preferences */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 .hash-span {
@@ -28,6 +38,10 @@
   backdrop-filter: saturate(180%) blur(20px);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.08);
+  /* Promote to its own compositor layer so the GPU handles the blur
+     independently and the browser does not repaint it on every scroll tick. */
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .glass-dark {
@@ -35,6 +49,8 @@
   backdrop-filter: saturate(180%) blur(24px);
   -webkit-backdrop-filter: saturate(180%) blur(24px);
   border: 1px solid rgba(255, 255, 255, 0.06);
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 /* ─── Apple shimmer gradient text ─── */
