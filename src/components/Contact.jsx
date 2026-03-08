@@ -7,9 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { downloadResume } from "../utils/resumeDownload";
 
-const EarthCanvas = lazy(() =>
-  import("./canvas").then((mod) => ({ default: mod.EarthCanvas })),
-);
+const EarthCanvas = lazy(() => import("./canvas/Earth"));
 
 const Contact = () => {
   const formRef = useRef();

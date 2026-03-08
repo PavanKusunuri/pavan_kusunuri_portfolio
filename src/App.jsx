@@ -14,9 +14,7 @@ const Contact = lazy(() => import("./components/Contact"));
 
 // Heavy 3D star field lazy-loaded separately so Three.js
 // doesn't block the hero render.
-const StarsCanvas = lazy(() =>
-  import("./components/canvas").then((mod) => ({ default: mod.StarsCanvas })),
-);
+const StarsCanvas = lazy(() => import("./components/canvas/Stars"));
 
 const App = () => {
   return (
