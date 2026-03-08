@@ -1,7 +1,9 @@
-﻿import { useEffect, useState } from "react";
+﻿import { useEffect, useState, lazy, Suspense } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+
+// Lazy-load the heavy Three.js canvas so it doesn't block first paint
+const ComputersCanvas = lazy(() => import("./canvas/Computers"));
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -139,7 +141,9 @@ const Hero = () => {
               : "flex flex-1 h-[500px] items-center justify-center"
           }
         >
-          <ComputersCanvas />
+          <Suspense fallback={null}>
+            <ComputersCanvas />
+          </Suspense>
         </motion.div>
       </div>
 
