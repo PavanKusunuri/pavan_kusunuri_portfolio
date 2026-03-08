@@ -1,10 +1,74 @@
 # 🚀 Pavan Kusunuri – Full-Stack Engineer Portfolio
 
+<div align="center">
+
+[![Open to Work](https://img.shields.io/badge/Open%20to%20Work-✅%20Available-brightgreen?style=for-the-badge)](mailto:pavantejakusunuri@gmail.com)
+[![Experience](https://img.shields.io/badge/Experience-6%2B%20Years-blue?style=for-the-badge)](https://linkedin.com/in/pavan-kusunuri)
+[![Portfolio](https://img.shields.io/badge/Live%20Portfolio-pavanportfolio.vercel.app-purple?style=for-the-badge&logo=vercel)](https://pavanportfolio.vercel.app)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Pavan%20Kusunuri-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/pavan-kusunuri)
+[![GitHub](https://img.shields.io/badge/GitHub-PavanKusunuri-181717?style=for-the-badge&logo=github)](https://github.com/PavanKusunuri)
+
+</div>
+
 > An interactive 3D portfolio showcasing **6+ years of professional software engineering experience** across full-stack development, cloud architectures, and enterprise systems.
 
 ---
 
+## 👨‍💻 Recruiter Quick View
+
+> **Senior Full-Stack Engineer** with 6+ years building scalable web applications at enterprise and startup levels. Currently at **ValueLabs**, previously at **Oracle Cerner** and **AeroSimple**.
+
+### 🏷️ Core Skills at a Glance
+
+#### Languages
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![Java](https://img.shields.io/badge/Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=css3&logoColor=white)
+
+#### Frontend
+![React](https://img.shields.io/badge/React-61DAFB?style=flat-square&logo=react&logoColor=black)
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=nextdotjs&logoColor=white)
+![Redux](https://img.shields.io/badge/Redux-764ABC?style=flat-square&logo=redux&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=flat-square&logo=threedotjs&logoColor=white)
+![Framer Motion](https://img.shields.io/badge/Framer_Motion-0055FF?style=flat-square&logo=framer&logoColor=white)
+
+#### Backend
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=nodedotjs&logoColor=white)
+![Express.js](https://img.shields.io/badge/Express.js-000000?style=flat-square&logo=express&logoColor=white)
+![Django](https://img.shields.io/badge/Django-092E20?style=flat-square&logo=django&logoColor=white)
+![Django REST](https://img.shields.io/badge/Django_REST-ff1709?style=flat-square&logo=django&logoColor=white)
+![GraphQL](https://img.shields.io/badge/GraphQL-E10098?style=flat-square&logo=graphql&logoColor=white)
+![REST API](https://img.shields.io/badge/REST_API-009688?style=flat-square&logo=fastapi&logoColor=white)
+
+#### Databases
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=flat-square&logo=mongodb&logoColor=white)
+![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=flat-square&logo=mysql&logoColor=white)
+![Redis](https://img.shields.io/badge/Redis-DC382D?style=flat-square&logo=redis&logoColor=white)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=flat-square&logo=firebase&logoColor=black)
+
+#### Cloud & DevOps
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=flat-square&logo=amazonaws&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=flat-square&logo=kubernetes&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=flat-square&logo=githubactions&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+
+#### Tools & Practices
+![Figma](https://img.shields.io/badge/Figma-F24E1E?style=flat-square&logo=figma&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
+![Jest](https://img.shields.io/badge/Jest-C21325?style=flat-square&logo=jest&logoColor=white)
+![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=flat-square&logo=eslint&logoColor=white)
+![Agile/Scrum](https://img.shields.io/badge/Agile%2FScrum-0052CC?style=flat-square&logo=jira&logoColor=white)
+
+---
+
 ## 📋 Table of Contents
+- [Recruiter Quick View](#-recruiter-quick-view)
 - [Overview](#-overview)
 - [Live Demo](#-live-demo)
 - [Tech Stack](#-tech-stack)
@@ -171,39 +235,58 @@ Meta Threads-inspired platform allowing users to create communities and manage d
 
 ## 🎓 Skills & Expertise
 
-### Frontend Development
-- **Frameworks & Libraries:** React 18, Next.js, Vue.js, Angular
-- **3D Graphics:** Three.js, WebGL, Babylon.js
-- **Styling:** Tailwind CSS, CSS-in-JS, SCSS, PostCSS
-- **Animation:** Framer Motion, React Spring, GSAP
-- **State Management:** Redux Toolkit, Zustand, Context API
-- **Testing:** Jest, React Testing Library, Vitest
+### 🖥️ Frontend Development
 
-### Backend Development
-- **Runtime:** Node.js, Python
-- **Frameworks:** Express.js, Django, Django REST Framework, NestJS
-- **API Design:** RESTful APIs, GraphQL, WebSockets
-- **Authentication:** JWT, OAuth 2.0, Session Management
-- **API Security:** CORS, Rate Limiting, Input Validation
+| Skill | Proficiency |
+|-------|-------------|
+| React 18 / Next.js | ⭐⭐⭐⭐⭐ Expert |
+| TypeScript / JavaScript (ES2022+) | ⭐⭐⭐⭐⭐ Expert |
+| Tailwind CSS / SCSS / CSS-in-JS | ⭐⭐⭐⭐⭐ Expert |
+| Three.js / WebGL / R3F | ⭐⭐⭐⭐ Advanced |
+| Framer Motion / GSAP / React Spring | ⭐⭐⭐⭐ Advanced |
+| Redux Toolkit / Zustand / Context API | ⭐⭐⭐⭐⭐ Expert |
+| Jest / React Testing Library / Vitest | ⭐⭐⭐⭐ Advanced |
 
-### Databases & Data
-- **Relational:** PostgreSQL, MySQL
-- **NoSQL:** MongoDB, Firebase
-- **Caching:** Redis, Memcached
-- **Query Optimization:** Indexing, Query Planning
+### ⚙️ Backend Development
 
-### DevOps & Cloud
-- **Cloud Platforms:** AWS (EC2, S3, Lambda), Google Cloud, Azure
-- **CI/CD:** GitHub Actions, GitLab CI, Jenkins
-- **Containerization:** Docker, Kubernetes
-- **Monitoring:** New Relic, DataDog, CloudWatch
+| Skill | Proficiency |
+|-------|-------------|
+| Node.js / Express.js | ⭐⭐⭐⭐⭐ Expert |
+| Python / Django / Django REST Framework | ⭐⭐⭐⭐⭐ Expert |
+| RESTful API Design | ⭐⭐⭐⭐⭐ Expert |
+| GraphQL / WebSockets | ⭐⭐⭐⭐ Advanced |
+| JWT / OAuth 2.0 / Auth Flows | ⭐⭐⭐⭐ Advanced |
+| NestJS | ⭐⭐⭐ Intermediate |
 
-### Development Tools & Practices
-- **Version Control:** Git, GitHub, GitLab
-- **Build Tools:** Vite, Webpack, esbuild
-- **Package Management:** npm, yarn, pnpm
-- **Code Quality:** ESLint, Prettier, SonarQube
-- **Agile & Methodologies:** SCRUM, Kanban, Pair Programming
+### 🗄️ Databases & Data
+
+| Skill | Proficiency |
+|-------|-------------|
+| PostgreSQL / MySQL | ⭐⭐⭐⭐⭐ Expert |
+| MongoDB | ⭐⭐⭐⭐⭐ Expert |
+| Redis / Memcached (Caching) | ⭐⭐⭐⭐ Advanced |
+| Firebase / Firestore | ⭐⭐⭐⭐ Advanced |
+| Query Optimization / Indexing | ⭐⭐⭐⭐ Advanced |
+
+### ☁️ DevOps & Cloud
+
+| Skill | Proficiency |
+|-------|-------------|
+| AWS (EC2, S3, Lambda, CloudWatch) | ⭐⭐⭐⭐ Advanced |
+| Docker / Kubernetes | ⭐⭐⭐⭐ Advanced |
+| GitHub Actions / GitLab CI / Jenkins | ⭐⭐⭐⭐ Advanced |
+| Google Cloud / Azure | ⭐⭐⭐ Intermediate |
+| New Relic / DataDog / Monitoring | ⭐⭐⭐ Intermediate |
+
+### 🛠️ Development Practices
+
+| Area | Details |
+|------|---------|
+| **Version Control** | Git, GitHub, GitLab, Branching Strategies |
+| **Build Tools** | Vite, Webpack, esbuild, PostCSS |
+| **Code Quality** | ESLint, Prettier, SonarQube, Code Reviews |
+| **Methodologies** | SCRUM, Kanban, TDD, Pair Programming |
+| **Architecture** | Microservices, REST, MVC, Component-Driven |
 
 ---
 
@@ -292,12 +375,25 @@ This portfolio includes several advanced performance optimizations:
 
 ## 📧 Contact
 
+> ✅ **Currently open to Senior / Lead Full-Stack Engineer roles** – remote or hybrid.
+
 I'm always open to exciting opportunities and collaborations!
 
-- 📧 **Email:** [your-email@example.com](mailto:your-email@example.com)
+- 📧 **Email:** [pavantejakusunuri@gmail.com](mailto:pavantejakusunuri@gmail.com)
 - 💼 **LinkedIn:** [Pavan Kusunuri](https://linkedin.com/in/pavan-kusunuri)
 - 🐙 **GitHub:** [@PavanKusunuri](https://github.com/PavanKusunuri)
 - 🌐 **Portfolio:** [pavanportfolio.vercel.app](https://pavanportfolio.vercel.app)
+
+---
+
+## 📊 GitHub Stats
+
+<div align="center">
+
+![Pavan's GitHub Stats](https://github-readme-stats.vercel.app/api?username=PavanKusunuri&show_icons=true&theme=tokyonight&hide_border=true)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=PavanKusunuri&layout=compact&theme=tokyonight&hide_border=true)
+
+</div>
 
 ---
 
