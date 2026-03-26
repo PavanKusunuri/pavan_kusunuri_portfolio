@@ -11,7 +11,7 @@ import * as THREE from "three";
 import CanvasLoader from "../Loader";
 
 /* ─── Floating code-dot particles drifting through space ─────────────────── */
-const CodeParticles = ({ count = 65 }) => {
+const CodeParticles = ({ count = 40 }) => {
   const ref = useRef();
 
   const [positions, colors] = useMemo(() => {
@@ -235,7 +235,7 @@ const DeveloperScene = () => (
 /* ─── Canvas wrapper ──────────────────────────────────────────────────────── */
 const ComputersCanvas = () => (
   <Canvas
-    frameloop="always"
+    frameloop="demand"
     dpr={[1, 1.5]}
     camera={{ position: [0, 0, 7], fov: 40 }}
   >

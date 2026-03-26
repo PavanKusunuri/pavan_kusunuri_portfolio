@@ -1,4 +1,4 @@
-import React, { useRef, useState, lazy, Suspense } from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 
@@ -6,8 +6,6 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { slideIn } from "../utils/motion";
 import { downloadResume } from "../utils/resumeDownload";
-
-const EarthCanvas = lazy(() => import("./canvas/Earth"));
 
 const Contact = () => {
   const formRef = useRef();
@@ -49,14 +47,11 @@ const Contact = () => {
   };
 
   return (
-    // Layout switches to side-by-side at lg (1024px) instead of xl (1280px).
-    // Previously the Earth globe was stacked above the form on tablets all
-    // the way up to 1279px, needlessly dominating vertical screen space.
-    <div className="lg:mt-12 flex lg:flex-row flex-col-reverse gap-10 overflow-hidden">
-      {/* Form */}
+    // Form now centered and takes full width
+    <div className="w-full flex justify-center overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 0.8)}
-        className="lg:flex-[0.75] w-full rounded-2xl p-6 sm:p-8 lg:p-10"
+        className="w-full max-w-2xl rounded-2xl p-6 sm:p-8 lg:p-10"
         style={{
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.07)",
@@ -207,18 +202,6 @@ const Contact = () => {
         )}
       </motion.div>
 
-      {/* Earth */}
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 0.8)}
-        className="lg:flex-1 lg:h-auto md:h-[420px] h-[280px]"
-      >
-        <Suspense
-          fallback={
-            <div className="w-full h-full rounded-2xl glass animate-pulse" />
-          }
-        >
-          <EarthCanvas />
-        </Suspense>
       </motion.div>
     </div>
   );
