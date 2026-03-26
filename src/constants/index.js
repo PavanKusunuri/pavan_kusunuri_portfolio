@@ -21,6 +21,7 @@ import {
   oc_logo,
   aero_logo,
   Valuelabs_logo,
+  newlife_preview,
 } from "../assets";
 
 // CDN icon URLs for skills without local images (devicons CDN)
@@ -157,6 +158,35 @@ export const projects = [
     ],
     image: tripguide, // replace with GlobalCalqulate image if available
     source_code_link: "https://www.globalcalqulate.com",
+  },
+  {
+    name: "Techinifinity – IT Consulting Website",
+    description:
+      "A modern, fully responsive IT consulting website featuring 10 service pages (Cloud, Cybersecurity, DevOps, AI/ML, and more), an MDX-powered blog and case studies section, dark/light mode, animated UI, and a Zod-validated contact form backed by the Resend email API.",
+    tags: [
+      { name: "nextjs", color: "blue-text-gradient" },
+      { name: "typescript", color: "green-text-gradient" },
+      { name: "tailwind", color: "pink-text-gradient" },
+      { name: "framer-motion", color: "blue-text-gradient" },
+      { name: "mdx", color: "green-text-gradient" },
+    ],
+    image: carrent,
+    source_code_link: "https://github.com/PavanKusunuri/techinifinity",
+    live_link: "https://techinifinity.vercel.app/",
+  },
+  {
+    name: "NewLife IT Consultancy – Business Website",
+    description:
+      "A production-grade, Apple-inspired HR consultancy website built from scratch using HTML5, CSS3, Vanilla JS, and GSAP 3. Features a custom cursor, magnetic buttons, scroll-triggered animations, glassmorphism nav, infinite client ticker, and a fully responsive 5-breakpoint layout — zero frameworks, zero build tools.",
+    tags: [
+      { name: "html5", color: "blue-text-gradient" },
+      { name: "css3", color: "pink-text-gradient" },
+      { name: "gsap", color: "green-text-gradient" },
+      { name: "vanilla-js", color: "blue-text-gradient" },
+    ],
+    image: newlife_preview,
+    source_code_link: "https://github.com/PavanKusunuri/newlife_consultancy",
+    live_link: "https://pavankusunuri.github.io/newlife_consultancy/",
   },
 ];
 

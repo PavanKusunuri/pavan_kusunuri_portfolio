@@ -33,6 +33,7 @@ import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
 import Valuelabs_logo from "./company/ValueLabs.jpg";
+import newlife_preview from "./newlife_preview.jpg";
 
 export {
   logo,
@@ -44,6 +45,7 @@ export {
   menu,
   close,
   css,
+  newlife_preview,
   docker,
   figma,
   git,
