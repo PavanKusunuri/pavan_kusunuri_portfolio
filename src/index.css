@@ -53,9 +53,21 @@
   will-change: transform;
 }
 
-/* ─── Apple shimmer gradient text ─── */
+/* ─── Scroll progress bar ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #10b981 0%, #06b6d4 100%);
+  transform-origin: left;
+  z-index: 100;
+  pointer-events: none;
+}
+
+/* ─── Emerald shimmer gradient text ─── */
 .gradient-text {
-  background: linear-gradient(135deg, #e2e8f0 0%, #a78bfa 50%, #818cf8 100%);
+  background: linear-gradient(135deg, #e2e8f0 0%, #10b981 50%, #06b6d4 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -92,14 +104,14 @@
 }
 
 .apple-btn-primary {
-  background: #7c3aed;
+  background: #059669;
   color: #fff;
 }
 
 .apple-btn-primary:hover {
-  background: #6d28d9;
+  background: #047857;
   transform: scale(1.02);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.25);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.3);
 }
 
 /* ─── Skill card ─── */
@@ -120,9 +132,9 @@
 
 .skill-card:hover {
   transform: translateY(-4px) scale(1.03);
-  background: rgba(124, 58, 237, 0.12);
-  box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
-  border-color: rgba(124, 58, 237, 0.35);
+  background: rgba(16, 185, 129, 0.08);
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.3);
 }
 
 .skill-card img {
@@ -141,12 +153,12 @@
 
 /* ─── Experience timeline overrides ─── */
 .vertical-timeline::before {
-  background: linear-gradient(to bottom, #7c3aed 0%, #312e81 100%) !important;
+  background: linear-gradient(to bottom, #10b981 0%, #065f46 100%) !important;
   width: 2px !important;
 }
 
 .vertical-timeline-element-icon {
-  box-shadow: 0 0 0 3px rgba(124,58,237,0.3) !important;
+  box-shadow: 0 0 0 3px rgba(16,185,129,0.3) !important;
 }
 
 /* ─── Input Apple-style ─── */
@@ -164,9 +176,9 @@
 }
 
 .apple-input:focus {
-  border-color: rgba(124, 58, 237, 0.6);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.15);
-  background: rgba(124, 58, 237, 0.06);
+  border-color: rgba(16, 185, 129, 0.6);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  background: rgba(16, 185, 129, 0.04);
 }
 
 .apple-input::placeholder {

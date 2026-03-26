@@ -30,11 +30,11 @@ const ServiceCard = ({ index, title, icon }) => {
         className="w-full p-[1px] rounded-2xl"
         style={{
           background:
-            "linear-gradient(135deg, rgba(124,58,237,0.5) 0%, rgba(99,102,241,0.15) 100%)",
+            "linear-gradient(135deg, rgba(16,185,129,0.4) 0%, rgba(6,182,212,0.12) 100%)",
         }}
       >
         <div className="glass rounded-2xl py-6 px-8 min-h-[220px] flex flex-col justify-center items-center gap-4 group">
-          <div className="w-14 h-14 rounded-2xl bg-[rgba(124,58,237,0.15)] flex items-center justify-center group-hover:bg-[rgba(124,58,237,0.3)] transition-colors">
+          <div className="w-14 h-14 rounded-2xl bg-[rgba(16,185,129,0.1)] flex items-center justify-center group-hover:bg-[rgba(16,185,129,0.22)] transition-colors group-hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]">
             <img src={icon} alt={title} className="w-8 h-8 object-contain" />
           </div>
           <h3 className="text-white text-[15px] font-semibold text-center tracking-tight leading-snug">
@@ -62,11 +62,24 @@ const About = () => {
         supporting enterprise and SaaS web applications across healthcare and
         aviation domains. I've delivered production-critical features end-to-end
         at companies like{" "}
-        <span className="text-[#a78bfa] font-medium">ValueLabs</span>,{" "}
-        <span className="text-[#a78bfa] font-medium">Oracle Cerner</span>, and{" "}
-        <span className="text-[#a78bfa] font-medium">AeroSimple</span>, with
+        <span className="text-[#6ee7b7] font-medium">ValueLabs</span>,{" "}
+        <span className="text-[#6ee7b7] font-medium">Oracle Cerner</span>, and{" "}
+        <span className="text-[#6ee7b7] font-medium">AeroSimple</span>, with
         deep expertise in React, Node.js, Python, and scalable API design.
       </motion.p>
+
+      {/* Education badge */}
+      <motion.div
+        variants={fadeIn("", "", 0.25, 0.7)}
+        className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+        style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.18)" }}
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+        </svg>
+        <span className="text-[#10b981] text-[12px] font-medium">B.Tech · Computer Science &amp; Engineering</span>
+      </motion.div>
 
       <div className="mt-14 flex flex-wrap gap-6 justify-start">
         {services.map((service, index) => (

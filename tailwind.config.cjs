@@ -14,8 +14,9 @@ module.exports = {
         /* Apple-style accents */
         apple: {
           blue: "#0a84ff",
-          purple: "#7c3aed",
-          "purple-light": "#a78bfa",
+          emerald: "#10b981",
+          "emerald-light": "#6ee7b7",
+          cyan: "#06b6d4",
           surface: "rgba(255,255,255,0.05)",
           border: "rgba(255,255,255,0.08)",
         },
@@ -23,7 +24,7 @@ module.exports = {
       boxShadow: {
         card: "0px 35px 120px -15px #211e35",
         glass: "0 8px 32px 0 rgba(0,0,0,0.37)",
-        glow: "0 0 40px rgba(124,58,237,0.25)",
+        glow: "0 0 40px rgba(16,185,129,0.25)",
       },
       screens: {
         xs: "450px",

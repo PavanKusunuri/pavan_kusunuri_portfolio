@@ -29,16 +29,16 @@ const ExperienceCard = ({ experience }) => {
         padding: "20px clamp(16px, 4vw, 28px)",
       }}
       contentArrowStyle={{
-        borderRight: "7px solid rgba(124,58,237,0.4)",
+        borderRight: "7px solid rgba(16,185,129,0.35)",
       }}
       date={
-        <span className="text-[#a78bfa] font-medium text-[13px] tracking-tight">
+        <span className="text-[#6ee7b7] font-medium text-[13px] tracking-tight">
           {experience.date}
         </span>
       }
       iconStyle={{
         background: experience.iconBg,
-        boxShadow: "0 0 0 3px rgba(124,58,237,0.3)",
+        boxShadow: "0 0 0 3px rgba(16,185,129,0.25)",
       }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
@@ -56,7 +56,7 @@ const ExperienceCard = ({ experience }) => {
           {experience.title}
         </h3>
         <p
-          className="text-[#a78bfa] text-[14px] font-medium mt-1"
+          className="text-[#6ee7b7] text-[14px] font-medium mt-1"
           style={{ margin: "4px 0 0" }}
         >
           {experience.company_name}
@@ -73,6 +73,25 @@ const ExperienceCard = ({ experience }) => {
           </li>
         ))}
       </ul>
+
+      {/* Tech stack pills */}
+      {experience.techStack && experience.techStack.length > 0 && (
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {experience.techStack.map((tech) => (
+            <span
+              key={tech}
+              className="text-[11px] font-medium px-2.5 py-0.5 rounded-full"
+              style={{
+                background: "rgba(16,185,129,0.08)",
+                border: "1px solid rgba(16,185,129,0.2)",
+                color: "#6ee7b7",
+              }}
+            >
+              {tech}
+            </span>
+          ))}
+        </div>
+      )}
     </VerticalTimelineElement>
   );
 };
@@ -90,7 +109,7 @@ const Experience = () => {
       </motion.div>
 
       <div className="mt-16">
-        <VerticalTimeline lineColor="rgba(124,58,237,0.35)">
+        <VerticalTimeline lineColor="rgba(16,185,129,0.25)">
           {experiences.map((experience, index) => (
             <ExperienceCard
               key={`experience-${index}`}

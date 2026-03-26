@@ -36,7 +36,8 @@ const javaIcon = `${DEVICON}/java/java-original.svg`;
 
 export const navLinks = [
   { id: "about", title: "About" },
-  { id: "work", title: "Work" },
+  { id: "work", title: "Experience" },
+  { id: "works", title: "Projects" },
   { id: "contact", title: "Contact" },
 ];
 
@@ -86,6 +87,7 @@ export const experiences = [
       "Identifying and resolving performance bottlenecks in production systems.",
       "Handling production issues and mentoring junior engineers through code reviews.",
     ],
+    techStack: ["React.js", "Node.js", "PostgreSQL", "AWS", "TypeScript"],
   },
   {
     title: "Software Engineer",
@@ -100,6 +102,7 @@ export const experiences = [
       "Resolved production issues to ensure system reliability and compliance.",
       "Collaborated with cross-functional teams in a regulated enterprise environment.",
     ],
+    techStack: ["React.js", "Java", "REST APIs", "Oracle DB", "Spring Boot"],
   },
   {
     title: "Software Development Engineer",
@@ -114,6 +117,7 @@ export const experiences = [
       "Owned critical modules including Work Order Management and Asset Management.",
       "Worked closely with product stakeholders to translate business requirements into technical solutions.",
     ],
+    techStack: ["Django", "React.js", "PostgreSQL", "Docker", "Python"],
   },
 ];
 
@@ -127,63 +131,73 @@ export const projects = [
     description:
       "A modern interactive web experience built using Next.js, Tailwind CSS, and Framer Motion, focusing on smooth animations and responsive UI design.",
     tags: [
-      { name: "nextjs", color: "blue-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
-      { name: "framer-motion", color: "green-text-gradient" },
+      { name: "Next.js", color: "blue-text-gradient" },
+      { name: "Tailwind", color: "pink-text-gradient" },
+      { name: "Framer Motion", color: "green-text-gradient" },
     ],
+    gradient: ["#0f2027", "#203a43", "#2c5364"],
+    type: "Personal",
     image: carrent,
     source_code_link: "https://github.com/PavanKusunuri/metaverse",
   },
   {
-    name: "WorkPlace – Job Discovery Platform",
+    name: "WorkPlace – Job Discovery",
     description:
       "A full-stack web application enabling users to search job listings, view salary estimates, and discover opportunities based on location.",
     tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "nodejs", color: "green-text-gradient" },
-      { name: "express", color: "pink-text-gradient" },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "Node.js", color: "green-text-gradient" },
+      { name: "Express", color: "pink-text-gradient" },
     ],
+    gradient: ["#0a2342", "#1a3a5c", "#1e5f74"],
+    type: "Personal",
     image: jobit,
     source_code_link: "https://github.com/PavanKusunuri/Job_portal",
   },
   {
-    name: "GlobalCalqulate – Financial Calculator Platform",
+    name: "GlobalCalqulate",
     description:
-      "A production-grade financial calculator platform designed to help users make informed decisions across investments, loans, and cost-of-living scenarios. Built with a focus on accurate computation logic, scalable architecture, SEO optimization, and a clean, user-friendly interface.",
+      "Production-grade financial calculator platform helping users make informed decisions across investments, loans, and cost-of-living scenarios. SEO-optimized with scalable architecture.",
     tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "nextjs", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
-      { name: "seo", color: "blue-text-gradient" },
+      { name: "React", color: "blue-text-gradient" },
+      { name: "Next.js", color: "green-text-gradient" },
+      { name: "Tailwind", color: "pink-text-gradient" },
+      { name: "SEO", color: "blue-text-gradient" },
     ],
-    image: tripguide, // replace with GlobalCalqulate image if available
+    gradient: ["#064e3b", "#065f46", "#047857"],
+    type: "SaaS",
+    image: tripguide,
     source_code_link: "https://www.globalcalqulate.com",
+    live_link: "https://www.globalcalqulate.com",
   },
   {
-    name: "Techinifinity – IT Consulting Website",
+    name: "Techinifinity",
     description:
-      "A modern, fully responsive IT consulting website featuring 10 service pages (Cloud, Cybersecurity, DevOps, AI/ML, and more), an MDX-powered blog and case studies section, dark/light mode, animated UI, and a Zod-validated contact form backed by the Resend email API.",
+      "Modern, fully responsive IT consulting website with 10 service pages, MDX-powered blog, dark/light mode, and a Zod-validated contact form backed by Resend API.",
     tags: [
-      { name: "nextjs", color: "blue-text-gradient" },
-      { name: "typescript", color: "green-text-gradient" },
-      { name: "tailwind", color: "pink-text-gradient" },
-      { name: "framer-motion", color: "blue-text-gradient" },
-      { name: "mdx", color: "green-text-gradient" },
+      { name: "Next.js", color: "blue-text-gradient" },
+      { name: "TypeScript", color: "green-text-gradient" },
+      { name: "Tailwind", color: "pink-text-gradient" },
+      { name: "MDX", color: "blue-text-gradient" },
     ],
+    gradient: ["#1a1a2e", "#16213e", "#0f3460"],
+    type: "Freelance",
     image: carrent,
     source_code_link: "https://github.com/PavanKusunuri/techinifinity",
     live_link: "https://techinifinity.vercel.app/",
   },
   {
-    name: "NewLife IT Consultancy – Business Website",
+    name: "NewLife IT Consultancy",
     description:
-      "A production-grade, Apple-inspired HR consultancy website built from scratch using HTML5, CSS3, Vanilla JS, and GSAP 3. Features a custom cursor, magnetic buttons, scroll-triggered animations, glassmorphism nav, infinite client ticker, and a fully responsive 5-breakpoint layout — zero frameworks, zero build tools.",
+      "Production-grade, Apple-inspired HR consultancy website in vanilla HTML/CSS/JS + GSAP 3. Custom cursor, magnetic buttons, scroll-triggered animations — zero frameworks.",
     tags: [
-      { name: "html5", color: "blue-text-gradient" },
-      { name: "css3", color: "pink-text-gradient" },
-      { name: "gsap", color: "green-text-gradient" },
-      { name: "vanilla-js", color: "blue-text-gradient" },
+      { name: "HTML5", color: "blue-text-gradient" },
+      { name: "CSS3", color: "pink-text-gradient" },
+      { name: "GSAP", color: "green-text-gradient" },
+      { name: "Vanilla JS", color: "blue-text-gradient" },
     ],
+    gradient: ["#1a0533", "#2d0a4e", "#4a1a6b"],
+    type: "Freelance",
     image: newlife_preview,
     source_code_link: "https://github.com/PavanKusunuri/newlife_consultancy",
     live_link: "https://pavankusunuri.github.io/newlife_consultancy/",

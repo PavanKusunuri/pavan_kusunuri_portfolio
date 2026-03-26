@@ -18,11 +18,11 @@ const CodeParticles = ({ count = 130 }) => {
     const pos = new Float32Array(count * 3);
     const col = new Float32Array(count * 3);
     const palette = [
-      new THREE.Color("#7c3aed"),
-      new THREE.Color("#3b82f6"),
+      new THREE.Color("#10b981"),
       new THREE.Color("#06b6d4"),
-      new THREE.Color("#a78bfa"),
-      new THREE.Color("#38bdf8"),
+      new THREE.Color("#34d399"),
+      new THREE.Color("#22d3ee"),
+      new THREE.Color("#6ee7b7"),
     ];
     for (let i = 0; i < count; i++) {
       pos[i * 3] = (Math.random() - 0.5) * 7;
@@ -140,8 +140,8 @@ const DeveloperCore = () => (
   <Float speed={1.8} rotationIntensity={0.5} floatIntensity={0.4}>
     <Sphere args={[1, 32, 32]}>
       <MeshDistortMaterial
-        color="#7c3aed"
-        emissive="#4c1d95"
+        color="#10b981"
+        emissive="#065f46"
         emissiveIntensity={0.5}
         distort={0.35}
         speed={2.5}
@@ -156,8 +156,8 @@ const DeveloperCore = () => (
 const DeveloperScene = () => (
   <>
     <ambientLight intensity={0.35} />
-    <pointLight position={[6, 6, 6]} intensity={2} color="#7c3aed" />
-    <pointLight position={[-6, -4, -4]} intensity={1} color="#3b82f6" />
+    <pointLight position={[6, 6, 6]} intensity={2} color="#10b981" />
+    <pointLight position={[-6, -4, -4]} intensity={1} color="#06b6d4" />
 
     {/* Central glowing distorted sphere */}
     <DeveloperCore />
@@ -167,21 +167,21 @@ const DeveloperScene = () => (
       radius={1.9}
       rotX={Math.PI / 2}
       rotZ={0}
-      color="#7c3aed"
+      color="#10b981"
       speed={0.5}
     />
     <OrbitRing
       radius={2.3}
       rotX={Math.PI / 4}
       rotZ={Math.PI / 6}
-      color="#3b82f6"
+      color="#06b6d4"
       speed={0.35}
     />
     <OrbitRing
       radius={1.6}
       rotX={0}
       rotZ={Math.PI / 3}
-      color="#06b6d4"
+      color="#34d399"
       speed={0.6}
     />
 
@@ -223,7 +223,7 @@ const DeveloperScene = () => (
       orbitSpeed={0.45}
       orbitOffset={Math.PI * 1.0}
       yOffset={0.6}
-      color="#a78bfa"
+      color="#6ee7b7"
       shape="octa"
     />
 

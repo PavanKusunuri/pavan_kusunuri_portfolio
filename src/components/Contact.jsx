@@ -67,6 +67,47 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={`${styles.sectionHeadText} mt-1`}>Contact.</h3>
 
+        {/* Availability banner */}
+        <div
+          className="mt-4 mb-2 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+          style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)" }}
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75" />
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]" />
+          </span>
+          <span className="text-[#10b981] text-[12px] font-medium">Available for full-time opportunities</span>
+        </div>
+
+        {/* LinkedIn + GitHub quick links */}
+        <div className="flex items-center gap-3 mt-3 mb-6">
+          <a
+            href="https://www.linkedin.com/in/pavan-kusunuri"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[rgba(255,255,255,0.5)] hover:text-white text-[13px] transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+              <rect x="2" y="9" width="4" height="12"/>
+              <circle cx="4" cy="4" r="2"/>
+            </svg>
+            LinkedIn
+          </a>
+          <span className="text-white/10">|</span>
+          <a
+            href="https://github.com/PavanKusunuri"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[rgba(255,255,255,0.5)] hover:text-white text-[13px] transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+
         {sent ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -74,7 +115,14 @@ const Contact = () => {
             transition={{ duration: 0.5 }}
             className="mt-12 text-center"
           >
-            <div className="text-4xl mb-4">👋</div>
+            <div
+              className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center"
+              style={{ background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.3)" }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12"/>
+              </svg>
+            </div>
             <h4 className="text-white text-[20px] font-semibold tracking-tight mb-2">
               Message Sent!
             </h4>
