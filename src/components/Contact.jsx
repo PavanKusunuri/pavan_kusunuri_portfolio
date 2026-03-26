@@ -204,6 +204,5 @@ const Contact = () => {
     </div>
   );
 };
-};
 
 export default SectionWrapper(Contact, "contact");

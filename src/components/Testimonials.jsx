@@ -8,21 +8,21 @@ const testimonials = [
   {
     quote:
       "Pavan consistently delivered high-quality, production-ready code on tight timelines. His deep understanding of React and Node.js architectures was a game-changer for our platform.",
-    name: "Sarah Chen",
+    name: "Venkat Sampara",
     title: "Engineering Manager",
     company: "ValueLabs",
   },
   {
     quote:
       "One of the most reliable engineers I've worked with. Pavan took ownership of complex healthcare workflows and reduced critical bug counts by a significant margin.",
-    name: "Dr. Michael Torres",
+    name: "Sarvanan",
     title: "Senior Technical Lead",
     company: "Oracle Cerner",
   },
   {
     quote:
       "Pavan's ability to translate complex business requirements into elegant technical solutions was invaluable during our SaaS MVP phase. A true full-stack craftsman.",
-    name: "James Hartley",
+    name: "Vishu",
     title: "Co-founder & CTO",
     company: "AeroSimple",
   },
