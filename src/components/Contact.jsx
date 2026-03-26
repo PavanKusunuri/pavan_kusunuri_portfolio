@@ -201,10 +201,9 @@ const Contact = () => {
           </form>
         )}
       </motion.div>
-
-      </motion.div>
     </div>
   );
+};
 };
 
 export default SectionWrapper(Contact, "contact");
