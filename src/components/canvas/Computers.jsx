@@ -11,7 +11,7 @@ import * as THREE from "three";
 import CanvasLoader from "../Loader";
 
 /* ─── Floating code-dot particles drifting through space ─────────────────── */
-const CodeParticles = ({ count = 130 }) => {
+const CodeParticles = ({ count = 65 }) => {
   const ref = useRef();
 
   const [positions, colors] = useMemo(() => {

@@ -36,8 +36,8 @@ const ProjectCard = ({
         tiltMaxAngleDegrees={8}
         scale={1.02}
         transitionSpeed={600}
-        gyroscope={true}
-        className="h-full"
+        gyroscope={false}
+        className="h-full tilt-container"
       >
         <div
           className="h-full rounded-2xl overflow-hidden flex flex-col"

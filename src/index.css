@@ -19,6 +19,16 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Hide default vertical scrollbar – using custom scroll progress bar instead */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+html {
+  scrollbar-width: none;
+}
+
 /* Scoped smooth scrolling – respects user motion preferences */
 @media (prefers-reduced-motion: no-preference) {
   html {
@@ -367,4 +377,23 @@
       -1.8em 1.8em 0 0em rgba(255, 255, 255, 0.5),
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
+}
+
+/* ─── Performance optimizations for smooth scrolling ─── */
+canvas {
+  will-change: auto;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.tilt-container {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Framer Motion optimizations */
+[style*="transform"] {
+  transform: translateZ(0);
 }
