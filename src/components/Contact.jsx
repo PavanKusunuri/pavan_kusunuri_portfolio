@@ -9,7 +9,13 @@ import { downloadResume } from "../utils/resumeDownload";
 
 const Contact = () => {
   const formRef = useRef();
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
 
@@ -21,6 +27,7 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
+
     emailjs
       .send(
         import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
@@ -32,7 +39,7 @@ const Contact = () => {
           to_email: "pavantejakusunuri@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       )
       .then(() => {
         setLoading(false);
@@ -47,8 +54,7 @@ const Contact = () => {
   };
 
   return (
-    // Form now centered and takes full width
-    <div className="w-full flex justify-center overflow-hidden">
+    <div className="w-full flex justify-center">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 0.8)}
         className="w-full max-w-2xl rounded-2xl p-6 sm:p-8 lg:p-10"
@@ -56,37 +62,46 @@ const Contact = () => {
           background: "rgba(255,255,255,0.04)",
           border: "1px solid rgba(255,255,255,0.07)",
           backdropFilter: "blur(16px)",
-          WebkitBackdropFilter: "blur(16px)",
         }}
       >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={`${styles.sectionHeadText} mt-1`}>Contact.</h3>
+        {/* 🔥 HEADER (REWRITTEN FOR IMPACT) */}
+        <p className={styles.sectionSubText}>Open to Opportunities</p>
 
-        {/* Availability banner */}
+        <h3 className={`${styles.sectionHeadText} mt-1`}>
+          Let’s Build Something Scalable Together
+        </h3>
+
+        <p className="text-white/50 text-[14px] mt-3 max-w-lg leading-relaxed">
+          I’m currently open to <span className="text-white font-medium">Senior Full-Stack Engineer</span> roles where I can contribute to scalable systems, performance optimization, and production-grade applications.
+        </p>
+
+        {/* 🔥 AVAILABILITY */}
         <div
-          className="mt-4 mb-2 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
-          style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.2)" }}
+          className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
+          style={{
+            background: "rgba(16,185,129,0.08)",
+            border: "1px solid rgba(16,185,129,0.2)",
+          }}
         >
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10b981] opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#10b981]" />
+          <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
+          <span className="text-[#10b981] text-[12px] font-medium">
+            Actively open to full-time roles • Immediate joiner
           </span>
-          <span className="text-[#10b981] text-[12px] font-medium">Available for full-time opportunities</span>
         </div>
 
-        {/* LinkedIn + GitHub quick links */}
+        {/* 🔥 DIRECT CONTACT */}
+        <div className="mt-4 text-[13px] text-white/50">
+          📧 pavantejakusunuri@gmail.com
+        </div>
+
+        {/* 🔥 SOCIAL LINKS */}
         <div className="flex items-center gap-3 mt-3 mb-6">
           <a
             href="https://www.linkedin.com/in/pavan-kusunuri"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[rgba(255,255,255,0.5)] hover:text-white text-[13px] transition-colors"
+            className="text-white/50 hover:text-white text-[13px]"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
-              <rect x="2" y="9" width="4" height="12"/>
-              <circle cx="4" cy="4" r="2"/>
-            </svg>
             LinkedIn
           </a>
           <span className="text-white/10">|</span>
@@ -94,51 +109,47 @@ const Contact = () => {
             href="https://github.com/PavanKusunuri"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[rgba(255,255,255,0.5)] hover:text-white text-[13px] transition-colors"
+            className="text-white/50 hover:text-white text-[13px]"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
-            </svg>
             GitHub
           </a>
         </div>
 
+        {/* 🔥 SUCCESS STATE */}
         {sent ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="mt-12 text-center"
+            className="mt-10 text-center"
           >
-            <div
-              className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center"
-              style={{ background: "rgba(16,185,129,0.12)", border: "1px solid rgba(16,185,129,0.3)" }}
-            >
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <polyline points="20 6 9 17 4 12"/>
-              </svg>
+            <div className="w-14 h-14 rounded-full mx-auto mb-4 flex items-center justify-center bg-[#10b981]/10 border border-[#10b981]/30">
+              ✓
             </div>
-            <h4 className="text-white text-[20px] font-semibold tracking-tight mb-2">
-              Message Sent!
+
+            <h4 className="text-white text-[20px] font-semibold mb-2">
+              Message Sent Successfully
             </h4>
-            <p className="text-[rgba(255,255,255,0.5)] text-[14px]">
-              Thanks for reaching out. I&apos;ll get back to you soon.
+
+            <p className="text-white/50 text-[14px]">
+              Thanks for reaching out. I usually respond within 24 hours.
             </p>
+
             <button
               onClick={() => setSent(false)}
-              className="mt-6 apple-btn glass text-white px-6 py-2 text-[14px]"
+              className="mt-6 apple-btn glass px-6 py-2"
             >
-              Send another
+              Send Another Message
             </button>
           </motion.div>
         ) : (
+          /* 🔥 FORM */
           <form
             ref={formRef}
             onSubmit={handleSubmit}
             className="mt-10 flex flex-col gap-6"
           >
             <label className="flex flex-col gap-2">
-              <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
+              <span className="text-white/60 text-[12px] uppercase">
                 Name
               </span>
               <input
@@ -153,7 +164,7 @@ const Contact = () => {
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
+              <span className="text-white/60 text-[12px] uppercase">
                 Email
               </span>
               <input
@@ -168,36 +179,43 @@ const Contact = () => {
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className="text-[rgba(255,255,255,0.6)] text-[12px] font-semibold tracking-[0.12em] uppercase">
+              <span className="text-white/60 text-[12px] uppercase">
                 Message
               </span>
               <textarea
-                rows={6}
+                rows={5}
                 name="message"
                 value={form.message}
                 onChange={handleChange}
                 required
-                placeholder="What would you like to discuss?"
+                placeholder="Tell me about the role or opportunity..."
                 className="apple-input resize-none"
               />
             </label>
 
+            {/* 🔥 CTA */}
             <div className="flex flex-wrap gap-3 pt-2">
               <button
                 type="submit"
                 disabled={loading}
-                className="apple-btn apple-btn-primary px-8 py-3 text-[15px] disabled:opacity-60"
+                className="apple-btn apple-btn-primary px-8 py-3 text-[15px]"
               >
-                {loading ? "Sending…" : "Send Message"}
+                {loading ? "Sending..." : "Start a Conversation"}
               </button>
+
               <button
                 type="button"
                 onClick={downloadResume}
-                className="apple-btn glass text-white px-6 py-3 text-[14px]"
+                className="apple-btn glass px-6 py-3 text-[14px]"
               >
                 ⬇ Download Resume
               </button>
             </div>
+
+            {/* 🔥 TRUST SIGNAL */}
+            <p className="text-white/30 text-[11px] mt-3">
+              Experience in enterprise systems (Oracle Cerner, ValueLabs)
+            </p>
           </form>
         )}
       </motion.div>
