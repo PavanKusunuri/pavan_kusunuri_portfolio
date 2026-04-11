@@ -5,9 +5,9 @@ const EASE = [0.16, 1, 0.3, 1];
 
 const stats = [
   { value: 6, suffix: "+", label: "Years Experience" },
-  { value: 3, suffix: "", label: "Companies" },
-  { value: 5, suffix: "+", label: "Projects Shipped" },
-  { value: 16, suffix: "+", label: "Technologies" },
+  { value: 10, suffix: "K+", label: "Users Served" },
+  { value: 3, suffix: "", label: "Enterprise Systems" },
+  { value: 20, suffix: "%+", label: "Performance Gains" },
 ];
 
 const useCountUp = (target, inView, duration = 1200) => {
