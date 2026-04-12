@@ -27,9 +27,16 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
 
-  // 🔥 Scroll tracking + active section detection
+  // 🔥 Scroll tracking + active section detection (optimized)
   useEffect(() => {
-    const sections = navLinks.map((nav) => document.getElementById(nav.id));
+    // Cache sections only once
+    const sections = navLinks
+      .map((nav) => document.getElementById(nav.id))
+      .filter(Boolean);
+    const sectionOffsets = sections.map((section) => ({
+      top: section.offsetTop - 120,
+      height: section.offsetHeight,
+    }));
 
     let ticking = false;
 
@@ -40,21 +47,19 @@ const Navbar = () => {
 
           setScrolled(scrollY > 60);
 
-          // progress
+          // Calculate progress
           const docHeight =
             document.documentElement.scrollHeight - window.innerHeight;
           setScrollProgress((scrollY / docHeight) * 100);
 
-          // active section detection
-          sections.forEach((section, index) => {
-            if (!section) return;
-            const top = section.offsetTop - 120;
-            const height = section.offsetHeight;
-
+          // Active section detection (optimized: no DOM queries in loop)
+          for (let i = 0; i < sectionOffsets.length; i++) {
+            const { top, height } = sectionOffsets[i];
             if (scrollY >= top && scrollY < top + height) {
-              setActive(navLinks[index].title);
+              setActive(navLinks[i].title);
+              break;
             }
-          });
+          }
 
           ticking = false;
         });
@@ -169,6 +174,6 @@ const Navbar = () => {
       </nav>
     </>
   );
-};
+};;
 
 export default Navbar;

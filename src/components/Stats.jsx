@@ -14,21 +14,35 @@ const useCountUp = (target, inView, duration = 1200) => {
   const [count, setCount] = useState(0);
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
-    const steps = 40;
-    const stepValue = target / steps;
-    const stepTime = duration / steps;
-    const timer = setInterval(() => {
-      start += stepValue;
-      if (start >= target) {
-        setCount(target);
-        clearInterval(timer);
+
+    let startTime = null;
+    let animationFrameId = null;
+    const startCount = 0;
+
+    const animate = (currentTime) => {
+      if (!startTime) startTime = currentTime;
+      const elapsed = currentTime - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+
+      // Easing function for smooth acceleration/deceleration
+      const easeOutQuad = 1 - Math.pow(1 - progress, 2);
+      const currentCount = Math.floor(
+        startCount + (target - startCount) * easeOutQuad,
+      );
+
+      setCount(currentCount);
+
+      if (progress < 1) {
+        animationFrameId = requestAnimationFrame(animate);
       } else {
-        setCount(Math.floor(start));
+        setCount(target);
       }
-    }, stepTime);
-    return () => clearInterval(timer);
+    };
+
+    animationFrameId = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrameId);
   }, [inView, target, duration]);
+  
   return count;
 };
 

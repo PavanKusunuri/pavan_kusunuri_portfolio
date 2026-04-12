@@ -51,6 +51,7 @@ const ProjectCard = ({
         scale={1.02}
         transitionSpeed={500}
         gyroscope={false}
+        disabled={typeof window !== "undefined" && window.innerWidth < 768}
       >
         <div
           className="h-full rounded-2xl overflow-hidden flex flex-col"

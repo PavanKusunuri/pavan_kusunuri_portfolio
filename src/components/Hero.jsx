@@ -1,4 +1,4 @@
-﻿import { useEffect, useState, lazy, Suspense } from "react";
+﻿import { useEffect, useState, lazy, Suspense, memo } from \"react\";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 
@@ -15,8 +15,8 @@ const ROLES = [
   "React · Node.js Specialist",
 ];
 
-/* Typewriter cycling through ROLES */
-const TypewriterRole = () => {
+/* Typewriter cycling through ROLES - memoized to prevent re-renders */
+const TypewriterRole = memo(() => {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState("");
   const [deleting, setDeleting] = useState(false);
@@ -43,7 +43,7 @@ const TypewriterRole = () => {
       <span className="animate-pulse">|</span>
     </span>
   );
-};
+});
 
 /* PK Avatar */
 const PKAvatar = () => (

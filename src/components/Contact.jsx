@@ -24,8 +24,27 @@ const Contact = () => {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
+  /* Form validation */
+  const isFormValid = () => {
+    const { name, email, message } = form;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return (
+      name.trim().length > 0 &&
+      emailRegex.test(email) &&
+      message.trim().length > 10
+    );
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!isFormValid()) {
+      alert(
+        "Please fill all fields correctly. Message needs at least 10 characters.",
+      );
+      return;
+    }
+
     setLoading(true);
 
     emailjs
@@ -39,7 +58,7 @@ const Contact = () => {
           to_email: "pavantejakusunuri@gmail.com",
           message: form.message,
         },
-        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
         setLoading(false);
@@ -72,7 +91,12 @@ const Contact = () => {
         </h3>
 
         <p className="text-white/50 text-[14px] mt-3 max-w-lg leading-relaxed">
-          I’m currently open to <span className="text-white font-medium">Senior Full-Stack Engineer</span> roles where I can contribute to scalable systems, performance optimization, and production-grade applications.
+          I’m currently open to{" "}
+          <span className="text-white font-medium">
+            Senior Full-Stack Engineer
+          </span>{" "}
+          roles where I can contribute to scalable systems, performance
+          optimization, and production-grade applications.
         </p>
 
         {/* 🔥 AVAILABILITY */}
@@ -149,9 +173,7 @@ const Contact = () => {
             className="mt-10 flex flex-col gap-6"
           >
             <label className="flex flex-col gap-2">
-              <span className="text-white/60 text-[12px] uppercase">
-                Name
-              </span>
+              <span className="text-white/60 text-[12px] uppercase">Name</span>
               <input
                 type="text"
                 name="name"
@@ -164,9 +186,7 @@ const Contact = () => {
             </label>
 
             <label className="flex flex-col gap-2">
-              <span className="text-white/60 text-[12px] uppercase">
-                Email
-              </span>
+              <span className="text-white/60 text-[12px] uppercase">Email</span>
               <input
                 type="email"
                 name="email"
@@ -197,8 +217,8 @@ const Contact = () => {
             <div className="flex flex-wrap gap-3 pt-2">
               <button
                 type="submit"
-                disabled={loading}
-                className="apple-btn apple-btn-primary px-8 py-3 text-[15px]"
+                disabled={loading || !isFormValid()}
+                className="apple-btn apple-btn-primary px-8 py-3 text-[15px] disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Sending..." : "Start a Conversation"}
               </button>
@@ -221,6 +241,6 @@ const Contact = () => {
       </motion.div>
     </div>
   );
-};
+};;
 
 export default SectionWrapper(Contact, "contact");

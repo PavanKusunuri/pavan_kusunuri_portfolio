@@ -6,7 +6,7 @@ import * as random from "maath/random/dist/maath-random.esm";
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(1200), { radius: 1.2 }),
+    random.inSphere(new Float32Array(800), { radius: 1.2 }),
   );
 
   useFrame((state, delta) => {
@@ -29,17 +29,40 @@ const Stars = (props) => {
   );
 };
 
+/* Error boundary for Canvas */
+class CanvasErrorBoundary extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { hasError: false };
+  }
+
+  static getDerivedStateFromError() {
+    return { hasError: true };
+  }
+
+  componentDidCatch(error) {
+    console.error("Canvas error:", error);
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <div style={{ width: "100%", height: "auto" }} />;
+    }
+    return this.props.children;
+  }
+}
+
 const StarsCanvas = () => {
   return (
-    <div className="w-full h-auto absolute inset-0 z-[-1]">
-      {/* frameloop="demand" - stars only update when scrolling or interaction.
-          Reduces CPU/GPU load during page navigation and scrolling. */}
-      <Canvas frameloop="demand" camera={{ position: [0, 0, 1] }}>
-        <Suspense fallback={null}>
-          <Stars />
-        </Suspense>
-      </Canvas>
-    </div>
+    <CanvasErrorBoundary>
+      <div className="w-full h-auto absolute inset-0 z-[-1]">
+        <Canvas frameloop="demand" camera={{ position: [0, 0, 1] }}>
+          <Suspense fallback={null}>
+            <Stars />
+          </Suspense>
+        </Canvas>
+      </div>
+    </CanvasErrorBoundary>
   );
 };
 
