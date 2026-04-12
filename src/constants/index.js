@@ -13,8 +13,6 @@ import {
   nodejs,
   mongodb,
   git,
-  figma,
-  docker,
   carrent,
   jobit,
   tripguide,
@@ -65,10 +63,8 @@ export const technologies = [
   { name: "Django / DRF", icon: djangoIcon },
   { name: "PostgreSQL", icon: postgresIcon },
   { name: "MongoDB", icon: mongodb },
-  { name: "Docker", icon: docker },
   { name: "AWS", icon: awsIcon },
   { name: "Git", icon: git },
-  { name: "Figma", icon: figma },
 ];
 
 /* ---------------- EXPERIENCE ---------------- */
