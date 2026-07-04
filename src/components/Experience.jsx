@@ -1,16 +1,15 @@
-﻿import React from "react";
+﻿import { motion } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
-import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
 
-import { styles } from "../styles";
-import { SectionWrapper } from "../hoc";
-import { textVariant } from "../utils/motion";
 import { aero_logo, oc_logo, Valuelabs_logo } from "../assets";
+import { SectionWrapper } from "../hoc";
+import { styles } from "../styles";
+import { textVariant } from "../utils/motion";
 
 /**
  * EXPERIENCE DATA — rewritten using resume (impact-focused)
