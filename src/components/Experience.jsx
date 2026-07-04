@@ -73,11 +73,12 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: "rgba(255,255,255,0.04)",
-        backdropFilter: "blur(16px)",
-        border: "1px solid rgba(255,255,255,0.07)",
+        background: "rgba(20,20,30,0.85)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        border: "1px solid rgba(255,255,255,0.08)",
         borderRadius: "16px",
-        boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
+        boxShadow: "0 8px 32px rgba(0,0,0,0.6)",
         color: "#fff",
         padding: "20px clamp(16px, 4vw, 28px)",
       }}
@@ -85,59 +86,55 @@ const ExperienceCard = ({ experience }) => {
         borderRight: "7px solid rgba(16,185,129,0.35)",
       }}
       date={
-        <span className="text-[#6ee7b7] font-medium text-[13px]">
+        <div className="text-emerald-300 font-medium text-[13px]">
           {experience.date}
-        </span>
+        </div>
       }
       iconStyle={{
         background: experience.iconBg,
         boxShadow: "0 0 0 3px rgba(16,185,129,0.25)",
+        width: 48,
+        height: 48,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
       icon={
-        <div className="flex justify-center items-center w-full h-full">
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className="w-[60%] h-[60%] object-contain"
-            loading="lazy"
-          />
-        </div>
+        <img
+          src={experience.icon}
+          alt={experience.company_name}
+          className="w-6 h-6 object-contain"
+          loading="lazy"
+        />
       }
     >
-      {/* Title */}
       <h3 className="text-white text-[18px] font-semibold">
         {experience.title}
       </h3>
-
-      {/* Company */}
-      <p className="text-[#6ee7b7] text-[14px] font-medium mt-1">
+      <p className="text-emerald-400 text-[14px] font-medium mt-1">
         {experience.company_name}
       </p>
-
-      {/* Highlights (NEW – strong signal) */}
       <p className="text-white/40 text-[12px] mt-1">{experience.highlights}</p>
 
-      {/* Points */}
-      <ul className="mt-4 list-disc ml-5 space-y-2">
+      <ul className="mt-4 pl-0 space-y-2 list-none">
         {experience.points.map((point, index) => (
           <li
             key={index}
-            className="text-[rgba(255,255,255,0.65)] text-[13px] leading-relaxed"
+            className="text-white/70 text-[13px] leading-relaxed pl-4 relative before:content-['▹'] before:absolute before:left-0 before:text-emerald-400"
           >
             {point}
           </li>
         ))}
       </ul>
 
-      {/* Tech Stack */}
-      <div className="mt-4 flex flex-wrap gap-1.5">
+      <div className="mt-4 flex flex-wrap gap-1.5 max-w-full">
         {experience.techStack.map((tech) => (
           <span
             key={tech}
-            className="text-[11px] px-2.5 py-0.5 rounded-full"
+            className="text-[11px] px-2.5 py-0.5 rounded-full whitespace-nowrap max-w-full overflow-hidden text-ellipsis"
             style={{
-              background: "rgba(16,185,129,0.08)",
-              border: "1px solid rgba(16,185,129,0.2)",
+              background: "rgba(16,185,129,0.1)",
+              border: "1px solid rgba(16,185,129,0.25)",
               color: "#6ee7b7",
             }}
           >
@@ -148,7 +145,6 @@ const ExperienceCard = ({ experience }) => {
     </VerticalTimelineElement>
   );
 };
-
 /**
  * MAIN COMPONENT
  */
