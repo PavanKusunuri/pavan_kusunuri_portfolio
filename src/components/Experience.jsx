@@ -10,7 +10,7 @@ import "react-vertical-timeline-component/style.min.css";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
-import { aerosimple, oracle, ValueLabs } from "../assets/company";
+import { aero_logo, oc_logo, Valuelabs_logo } from "../assets";
 
 /**
  * EXPERIENCE DATA — rewritten using resume (impact-focused)
@@ -20,7 +20,7 @@ const experiences = [
     title: "Senior Software Engineer",
     company_name: "ValueLabs",
     date: "Feb 2024 – Present",
-    icon: ValueLabs,
+    icon: Valuelabs_logo,
     iconBg: "#ffffff",
     highlights: "High-scale financial systems • Performance optimization",
     points: [
@@ -37,7 +37,7 @@ const experiences = [
     title: "Software Engineer",
     company_name: "Oracle Cerner",
     date: "Jan 2022 – Feb 2024",
-    icon: oracle,
+    icon: oc_logo,
     iconBg: "#ffffff",
     highlights: "Enterprise healthcare platform • Secure systems",
     points: [
@@ -53,7 +53,7 @@ const experiences = [
     title: "Software Development Engineer",
     company_name: "AeroSimple",
     date: "Dec 2019 – Jan 2022",
-    icon: aerosimple,
+    icon: aero_logo,
     iconBg: "#ffffff",
     highlights: "SaaS platform • Multi-airport operations",
     points: [

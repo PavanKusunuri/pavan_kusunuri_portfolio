@@ -16,8 +16,8 @@
     "maath": "^0.10.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^6.30.3",
     "react-parallax-tilt": "^1.7.0",
+    "react-router-dom": "^6.30.3",
     "react-vertical-timeline-component": "^4.0.0",
     "three": "^0.160.0"
   },
@@ -29,6 +29,6 @@
     "pdf-parse": "^2.4.5",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
-    "vite": "^4.5.14"
+    "vite": "^8.1.3"
   }
 }

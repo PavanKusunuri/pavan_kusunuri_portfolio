@@ -1,12 +1,12 @@
-import { useState, useRef, Suspense } from "react";
+import { PointMaterial, Points } from "@react-three/drei";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Points, PointMaterial } from "@react-three/drei";
-import * as random from "maath/random/dist/maath-random.esm";
+import * as random from "maath/random"; // ✅ correct import
+import React, { Suspense, useRef, useState } from "react";
 
 const Stars = (props) => {
   const ref = useRef();
   const [sphere] = useState(() =>
-    random.inSphere(new Float32Array(800), { radius: 1.2 }),
+    random.inSphere(new Float32Array(800), { radius: 1.2 }), // ✅ works with default export
   );
 
   useFrame((state, delta) => {
