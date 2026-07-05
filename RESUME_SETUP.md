@@ -8,8 +8,6 @@
    ```
    public/
    ├── Pavan_Kusunuri_Resume.pdf  ← Place your PDF here
-   ├── desktop_pc/
-   ├── planet/
    └── logo.svg
    ```
 

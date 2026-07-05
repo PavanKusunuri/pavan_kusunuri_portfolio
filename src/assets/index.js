@@ -8,8 +8,6 @@ import mobile from "./mobile.png";
 import web from "./web.png";
 
 import css from "./tech/css.png";
-import docker from "./tech/docker.png";
-import figma from "./tech/figma.png";
 import git from "./tech/git.png";
 import html from "./tech/html.png";
 import javascript from "./tech/javascript.png";
@@ -18,24 +16,20 @@ import nodejs from "./tech/nodejs.png";
 import reactjs from "./tech/reactjs.png";
 import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
-import threejs from "./tech/threejs.svg";
 import typescript from "./tech/typescript.png";
 
 import carrent from "./carrent.png";
 import aero_logo from "./company/Aerosimple_logo.png";
-import imaginnovate_logo from "./company/imaginnovate.png";
 import oc_logo from "./company/OC_logo.jpg";
-import uno_logo from "./company/Unosimple_logo.png";
 import Valuelabs_logo from "./company/ValueLabs.jpg";
 import jobit from "./jobit.png";
 import newlife_preview from "./newlife_preview.jpg";
 import tripguide from "./tripguide.png";
 
 export {
-  aero_logo, backend, carrent, close, creator, css, docker,
-  figma,
-  git, github, html, imaginnovate_logo, javascript, jobit, logo, menu, mobile, mongodb, newlife_preview, nodejs, oc_logo, reactjs,
-  redux, tailwind, threejs, tripguide, typescript, uno_logo,
+  aero_logo, backend, carrent, close, creator, css,
+  git, github, html, javascript, jobit, logo, menu, mobile, mongodb, newlife_preview, nodejs, oc_logo, reactjs,
+  redux, tailwind, tripguide, typescript,
   Valuelabs_logo, web
 };
 

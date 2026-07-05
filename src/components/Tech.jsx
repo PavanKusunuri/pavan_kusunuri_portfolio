@@ -29,7 +29,7 @@ const techCategories = [
   {
     label: "Cloud & DevOps",
     description: "Deployment, infrastructure, and tooling",
-    techs: ["AWS", "Docker", "Git", "Figma"],
+    techs: ["AWS", "Git"],
   },
 ];
 
