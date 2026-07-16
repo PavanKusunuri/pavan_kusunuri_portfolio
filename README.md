@@ -96,7 +96,7 @@ Built with cutting-edge technologies including **React 18**, **Three.js**, **Fra
 
 ## 🌐 Live Demo
 
-🔗 **[View Live Portfolio](https://pavanportfolio.vercel.app)** *(Deployed on Vercel)*
+🔗 **[View Live Portfolio](https://master--pavankusunuriportfolio.netlify.app/)** *(Deployed on Netlify)*
 
 > **Note:** Best viewed on Chrome, Firefox, or Safari (latest versions). Interactive 3D features optimized for desktop and tablet.
 
