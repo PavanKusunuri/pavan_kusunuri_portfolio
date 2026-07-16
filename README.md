@@ -4,7 +4,7 @@
 
 [![Open to Work](https://img.shields.io/badge/Open%20to%20Work-✅%20Available-brightgreen?style=for-the-badge)](mailto:pavantejakusunuri@gmail.com)
 [![Experience](https://img.shields.io/badge/Experience-6%2B%20Years-blue?style=for-the-badge)](https://linkedin.com/in/pavan-kusunuri)
-[![Portfolio](https://img.shields.io/badge/Live%20Portfolio-pavanportfolio.vercel.app-purple?style=for-the-badge&logo=vercel)](https://pavanportfolio.vercel.app)
+[![Portfolio](https://img.shields.io/badge/Live%20Portfolio-pavanportfolio.vercel.app-purple?style=for-the-badge&logo=vercel)](https://master--pavankusunuriportfolio.netlify.app/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Pavan%20Kusunuri-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/pavan-kusunuri)
 [![GitHub](https://img.shields.io/badge/GitHub-PavanKusunuri-181717?style=for-the-badge&logo=github)](https://github.com/PavanKusunuri)
 
