@@ -241,6 +241,6 @@ const Contact = () => {
       </motion.div>
     </div>
   );
-};;
+};
 
 export default SectionWrapper(Contact, "contact");

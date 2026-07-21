@@ -47,15 +47,17 @@ const TechCard = ({ name, icon, index }) => (
                hover:border-[#10b981]/40 hover:bg-white/[0.04] 
                transition-all duration-200"
   >
-    <img
-      src={icon}
-      alt={name}
-      loading="lazy"
-      className="w-8 h-8 object-contain"
-      onError={(e) => {
-        e.target.style.opacity = 0.3;
-      }}
-    />
+    <div className="w-9 h-9 rounded-lg bg-white/90 flex items-center justify-center p-1.5">
+      <img
+        src={icon}
+        alt={name}
+        loading="lazy"
+        className="w-full h-full object-contain"
+        onError={(e) => {
+          e.target.style.opacity = 0.3;
+        }}
+      />
+    </div>
     <span className="text-[12px] text-white/80 font-medium text-center">
       {name}
     </span>
