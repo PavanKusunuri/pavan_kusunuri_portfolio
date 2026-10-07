@@ -1,10 +1,10 @@
 ﻿import React, { useMemo } from "react";
-import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
+import Spotlight from "./Spotlight";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
@@ -45,21 +45,10 @@ const ProjectCard = ({
   const typeStyle = TYPE_COLORS[type] || TYPE_COLORS.Personal;
 
   return (
-    <motion.div variants={cardVariants} className="w-full sm:w-[340px]">
-      <Tilt
-        tiltMaxAngleDegrees={6}
-        scale={1.02}
-        transitionSpeed={500}
-        gyroscope={false}
-        disabled={typeof window !== "undefined" && window.innerWidth < 768}
-      >
+    <motion.div variants={cardVariants}>
+      <Spotlight className="h-full flex flex-col">
         <div
-          className="h-full rounded-2xl overflow-hidden flex flex-col"
-          style={{
-            background: "rgba(255,255,255,0.03)",
-            border: "1px solid rgba(255,255,255,0.07)",
-            backdropFilter: "blur(12px)",
-          }}
+          className="contents"
         >
           {/* 🔥 HEADER */}
           <div
@@ -133,7 +122,7 @@ const ProjectCard = ({
             )}
           </div>
         </div>
-      </Tilt>
+      </Spotlight>
     </motion.div>
   );
 };
@@ -160,7 +149,7 @@ const Works = () => {
       </motion.p>
 
       {/* 🔥 GRID */}
-      <div className="mt-12 flex flex-wrap gap-6">
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}

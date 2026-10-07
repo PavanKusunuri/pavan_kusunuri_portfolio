@@ -1,48 +1,32 @@
 ﻿import React, { useMemo } from "react";
-import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
 import { services } from "../constants";
 import { SectionWrapper } from "../hoc";
+import Spotlight from "./Spotlight";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const ServiceCard = ({ index, title, icon }) => {
-  // useMemo prevents a new variant object from being created on every render,
-  // which would cause Framer Motion to re-run its diffing logic unnecessarily.
   const cardVariants = useMemo(
-    () => fadeIn("right", "tween", index * 0.15, 0.5),
+    () => fadeIn("up", "tween", index * 0.12, 0.5),
     [index],
   );
 
   return (
-    <Tilt
-      tiltMaxAngleDegrees={10}
-      scale={1.03}
-      transitionSpeed={600}
-      // gyroscope enables the tilt effect on mobile via device-orientation events,
-      // giving touch users the same visual feedback as mouse users on desktop.
-      gyroscope={true}
-      className="xs:w-[230px] w-full"
-    >
-      <motion.div
-        variants={cardVariants}
-        className="w-full p-[1px] rounded-2xl"
-        style={{
-          background:
-            "linear-gradient(135deg, rgba(16,185,129,0.4) 0%, rgba(6,182,212,0.12) 100%)",
-        }}
-      >
-        <div className="glass rounded-2xl py-6 px-8 min-h-[220px] flex flex-col justify-center items-center gap-4 group">
-          <div className="w-14 h-14 rounded-2xl bg-[rgba(16,185,129,0.1)] flex items-center justify-center group-hover:bg-[rgba(16,185,129,0.22)] transition-colors group-hover:shadow-[0_0_20px_rgba(16,185,129,0.2)]">
-            <img src={icon} alt={title} className="w-8 h-8 object-contain" />
-          </div>
-          <h3 className="text-white text-[15px] font-semibold text-center tracking-tight leading-snug">
+    <motion.div variants={cardVariants}>
+      <Spotlight className="p-6 min-h-[190px] flex flex-col justify-between group">
+        <div className="w-12 h-12 rounded-2xl bg-[rgba(16,185,129,0.1)] flex items-center justify-center group-hover:bg-[rgba(16,185,129,0.22)] transition-colors">
+          <img src={icon} alt="" className="w-7 h-7 object-contain" />
+        </div>
+        <div>
+          <span className="eyebrow !text-[10px]">0{index + 1}</span>
+          <h3 className="text-white text-[19px] font-semibold tracking-tight leading-snug mt-1">
             {title}
           </h3>
         </div>
-      </motion.div>
-    </Tilt>
+      </Spotlight>
+    </motion.div>
   );
 };
 
@@ -68,20 +52,26 @@ const About = () => {
         deep expertise in React, Node.js, Python, and scalable API design.
       </motion.p>
 
-      {/* Education badge */}
-      <motion.div
-        variants={fadeIn("", "", 0.25, 0.7)}
-        className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
-        style={{ background: "rgba(16,185,129,0.08)", border: "1px solid rgba(16,185,129,0.18)" }}
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
-          <path d="M6 12v5c3 3 9 3 12 0v-5"/>
-        </svg>
-        <span className="text-[#10b981] text-[12px] font-medium">B.Tech · Computer Science &amp; Engineering</span>
+      {/* Education */}
+      <motion.div variants={fadeIn("", "", 0.25, 0.7)} className="mt-8">
+        <Spotlight className="inline-flex items-center gap-4 px-5 py-4 !rounded-2xl">
+          <div className="w-10 h-10 rounded-xl bg-[rgba(16,185,129,0.12)] flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div>
+            <p className="eyebrow !text-[10px]">Education</p>
+            <p className="text-white text-[15px] font-semibold tracking-tight mt-0.5">
+              B.Tech · Electronics &amp; Communication Engineering
+            </p>
+          </div>
+        </Spotlight>
       </motion.div>
 
-      <div className="mt-14 flex flex-wrap gap-6 justify-start">
+      {/* Bento grid of focus areas */}
+      <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}

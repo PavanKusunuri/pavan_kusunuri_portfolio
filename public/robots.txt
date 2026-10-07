@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://pavanportfolio-pi.vercel.app/sitemap.xml
+Sitemap: https://master--pavankusunuriportfolio.netlify.app/sitemap.xml

@@ -4,6 +4,7 @@ import { SectionWrapper } from "../hoc";
 import { technologies } from "../constants";
 import { textVariant } from "../utils/motion";
 import { styles } from "../styles";
+import Spotlight from "./Spotlight";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -42,25 +43,23 @@ const TechCard = ({ name, icon, index }) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-40px" }}
     transition={{ duration: 0.4, delay: index * 0.04, ease: EASE }}
-    className="flex flex-col items-center justify-center gap-2 p-3 rounded-xl 
-               bg-white/[0.02] border border-white/[0.06] 
-               hover:border-[#10b981]/40 hover:bg-white/[0.04] 
-               transition-all duration-200"
   >
-    <div className="w-9 h-9 rounded-lg bg-white/90 flex items-center justify-center p-1.5">
-      <img
-        src={icon}
-        alt={name}
-        loading="lazy"
-        className="w-full h-full object-contain"
-        onError={(e) => {
-          e.target.style.opacity = 0.3;
-        }}
-      />
-    </div>
-    <span className="text-[12px] text-white/80 font-medium text-center">
-      {name}
-    </span>
+    <Spotlight className="flex flex-col items-center justify-center gap-2 p-4 !rounded-2xl">
+      <div className="w-10 h-10 rounded-xl bg-white/90 flex items-center justify-center p-1.5">
+        <img
+          src={icon}
+          alt={name}
+          loading="lazy"
+          className="w-full h-full object-contain"
+          onError={(e) => {
+            e.target.style.opacity = 0.3;
+          }}
+        />
+      </div>
+      <span className="text-[12px] text-white/80 font-medium text-center">
+        {name}
+      </span>
+    </Spotlight>
   </motion.div>
 );
 

@@ -80,18 +80,18 @@ const Navbar = () => {
         style={{ width: `${scrollProgress}%` }}
       />
 
-      <nav
-        className={`${styles.paddingX} fixed w-full z-20 py-4 transition ${
-          scrolled ? "glass-dark shadow-glass" : "bg-transparent"
-        }`}
-      >
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
+      <nav className="fixed top-3 sm:top-4 left-0 w-full z-20 px-3 sm:px-6">
+        <div
+          className={`max-w-5xl mx-auto flex justify-between items-center rounded-full pl-5 pr-3 py-2.5 transition-all duration-300 ${
+            scrolled ? "nav-pill" : "bg-transparent border border-transparent"
+          }`}
+        >
           {/* 🔥 Logo (Improved branding) */}
           <Link to="/" className="flex flex-col leading-tight">
-            <span className="text-white font-semibold text-[16px]">
+            <span className="text-white font-semibold text-[16px] tracking-tight">
               Pavan Kusunuri
             </span>
-            <span className="text-[11px] text-[#6ee7b7]">
+            <span className="eyebrow !text-[10px] !tracking-[0.1em] before:content-none">
               Senior Full-Stack Engineer
             </span>
           </Link>
@@ -142,13 +142,13 @@ const Navbar = () => {
           </ul>
 
           {/* Mobile */}
-          <div className="sm:hidden">
+          <div className="sm:hidden relative">
             <button onClick={() => setToggle(!toggle)}>
               <img src={toggle ? close : menu} className="w-5 h-5" />
             </button>
 
             {toggle && (
-              <div className="absolute right-4 top-16 glass-dark p-5 rounded-xl">
+              <div className="absolute right-0 top-14 nav-pill p-5 rounded-2xl">
                 <ul className="flex flex-col gap-4">
                   {navLinks.map((nav) => (
                     <li key={nav.id}>

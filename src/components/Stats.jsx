@@ -1,5 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { motion, useInView } from "framer-motion";
+import Spotlight from "./Spotlight";
 
 const EASE = [0.16, 1, 0.3, 1];
 
@@ -58,34 +59,31 @@ const StatCard = ({ value, suffix, label, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.55, delay: index * 0.1, ease: EASE }}
-      className="flex-1 min-w-[140px] rounded-2xl p-6 flex flex-col items-center gap-2 text-center"
-      style={{
-        background: "rgba(255,255,255,0.03)",
-        border: "1px solid rgba(16,185,129,0.12)",
-        backdropFilter: "blur(12px)",
-      }}
     >
-      <span
-        className="text-[48px] font-extrabold tracking-tight leading-none"
-        style={{
-          background: "linear-gradient(135deg, #10b981 0%, #06b6d4 100%)",
-          WebkitBackgroundClip: "text",
-          WebkitTextFillColor: "transparent",
-          backgroundClip: "text",
-        }}
-      >
-        {count}{suffix}
-      </span>
-      <span className="text-[rgba(255,255,255,0.45)] text-[12px] font-semibold tracking-[0.1em] uppercase">
-        {label}
-      </span>
+      <Spotlight className="p-6 sm:p-7 h-full flex flex-col gap-3">
+        <span
+          className="text-[56px] sm:text-[64px] font-extrabold tracking-[-0.04em] leading-none"
+          style={{
+            fontFamily: "var(--font-display)",
+            background: "linear-gradient(135deg, #e2e8f0 0%, #10b981 60%, #06b6d4 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+          }}
+        >
+          {count}{suffix}
+        </span>
+        <span className="eyebrow !text-white/50 before:content-none !text-[11px]">
+          {label}
+        </span>
+      </Spotlight>
     </motion.div>
   );
 };
 
 const Stats = () => (
   <section className="max-w-7xl mx-auto px-6 sm:px-16 py-10">
-    <div className="flex flex-wrap gap-4 justify-center sm:justify-between">
+    <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
       {stats.map((s, i) => (
         <StatCard key={s.label} index={i} {...s} />
       ))}

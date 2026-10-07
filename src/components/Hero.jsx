@@ -89,6 +89,7 @@ const Hero = () => {
     <section className="relative w-full min-h-screen mx-auto overflow-hidden">
       {/* Ambient glow blobs */}
       <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 dot-grid" />
         <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-[#10b981] opacity-[0.07] blur-[120px]" />
         <div className="absolute top-1/3 right-0 w-[400px] h-[400px] rounded-full bg-[#06b6d4] opacity-[0.05] blur-[100px]" />
       </div>
@@ -134,7 +135,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.05, ease: EASE }}
-              className="text-[13px] uppercase tracking-[0.18em] font-semibold mb-3"
+              className="font-mono-ui text-[13px] uppercase tracking-[0.18em] font-medium mb-3"
               style={{ color: "rgba(255,255,255,0.4)" }}
             >
               <TypewriterRole />
@@ -177,7 +178,7 @@ const Hero = () => {
               transition={{ duration: 0.65, delay: 0.42, ease: EASE }}
               className="mt-8 flex flex-wrap gap-3"
             >
-              <a href="#about" className="apple-btn apple-btn-primary px-7 py-3 text-[15px]">
+              <a href="#works" className="apple-btn apple-btn-primary px-7 py-3 text-[15px]">
                 View Work
               </a>
               <a href="#contact" className="apple-btn glass text-white px-7 py-3 text-[15px]">

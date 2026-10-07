@@ -1,18 +1,17 @@
 const styles = {
   paddingX: "sm:px-16 px-6",
   paddingY: "sm:py-16 py-6",
-  padding: "sm:px-16 px-6 sm:py-16 py-10",
+  padding: "sm:px-16 px-6 sm:py-20 py-12",
 
-  // Apple-inspired: tight letter-spacing, strong weight, fluid sizing
+  // 2026: oversized, tightly tracked display type
   heroHeadText:
-    "font-extrabold tracking-tight text-white lg:text-[76px] sm:text-[58px] xs:text-[46px] text-[36px] lg:leading-[1.05] mt-2",
+    "font-extrabold tracking-[-0.04em] text-white lg:text-[88px] sm:text-[64px] xs:text-[50px] text-[40px] lg:leading-[0.98] leading-[1.02] mt-2",
   heroSubText:
-    "text-[#6ee7b7] font-normal tracking-tight lg:text-[26px] sm:text-[22px] xs:text-[18px] text-[15px] lg:leading-[1.4]",
+    "text-white/70 font-normal tracking-tight lg:text-[24px] sm:text-[20px] xs:text-[18px] text-[16px] lg:leading-[1.4]",
 
   sectionHeadText:
-    "text-white font-bold tracking-tight md:text-[52px] sm:text-[44px] xs:text-[36px] text-[28px] leading-tight",
-  sectionSubText:
-    "sm:text-[13px] text-[11px] text-[#10b981] uppercase tracking-[0.15em] font-semibold",
+    "text-white font-bold tracking-[-0.03em] md:text-[56px] sm:text-[46px] xs:text-[38px] text-[30px] leading-[1.05] mt-3",
+  sectionSubText: "eyebrow",
 };
 
 export { styles };
