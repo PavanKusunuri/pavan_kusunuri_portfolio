@@ -6,9 +6,9 @@ const EASE = [0.16, 1, 0.3, 1];
 
 const stats = [
   { value: 6, suffix: "+", label: "Years Experience" },
-  { value: 10, suffix: "K+", label: "Users Served" },
-  { value: 3, suffix: "", label: "Enterprise Systems" },
-  { value: 20, suffix: "%+", label: "Performance Gains" },
+  { value: 500, suffix: "", label: "Calculators Shipped" },
+  { value: 3, suffix: "", label: "Industries" },
+  { value: 4, suffix: "", label: "Companies" },
 ];
 
 const useCountUp = (target, inView, duration = 1200) => {
@@ -18,20 +18,13 @@ const useCountUp = (target, inView, duration = 1200) => {
 
     let startTime = null;
     let animationFrameId = null;
-    const startCount = 0;
 
     const animate = (currentTime) => {
       if (!startTime) startTime = currentTime;
       const elapsed = currentTime - startTime;
       const progress = Math.min(elapsed / duration, 1);
-
-      // Easing function for smooth acceleration/deceleration
       const easeOutQuad = 1 - Math.pow(1 - progress, 2);
-      const currentCount = Math.floor(
-        startCount + (target - startCount) * easeOutQuad,
-      );
-
-      setCount(currentCount);
+      setCount(Math.floor(target * easeOutQuad));
 
       if (progress < 1) {
         animationFrameId = requestAnimationFrame(animate);
@@ -43,7 +36,7 @@ const useCountUp = (target, inView, duration = 1200) => {
     animationFrameId = requestAnimationFrame(animate);
     return () => cancelAnimationFrame(animationFrameId);
   }, [inView, target, duration]);
-  
+
   return count;
 };
 
@@ -62,7 +55,7 @@ const StatCard = ({ value, suffix, label, index }) => {
     >
       <Spotlight className="p-6 sm:p-7 h-full flex flex-col gap-3">
         <span
-          className="text-[56px] sm:text-[64px] font-extrabold tracking-[-0.04em] leading-none"
+          className="text-[48px] sm:text-[56px] font-extrabold tracking-[-0.04em] leading-none"
           style={{
             fontFamily: "var(--font-display)",
             background: "linear-gradient(135deg, #e2e8f0 0%, #10b981 60%, #06b6d4 100%)",

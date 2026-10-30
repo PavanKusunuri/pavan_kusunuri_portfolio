@@ -26,6 +26,8 @@ const TYPE_COLORS = {
   },
 };
 
+const isGithub = (url) => typeof url === "string" && url.includes("github.com");
+
 const ProjectCard = ({
   index,
   name,
@@ -38,89 +40,100 @@ const ProjectCard = ({
   live_link,
 }) => {
   const cardVariants = useMemo(
-    () => fadeIn("up", "tween", index * 0.12, 0.5),
+    () => fadeIn("up", "tween", index * 0.1, 0.5),
     [index],
   );
 
   const typeStyle = TYPE_COLORS[type] || TYPE_COLORS.Personal;
+  const showGithub = isGithub(source_code_link);
 
   return (
-    <motion.div variants={cardVariants}>
-      <Spotlight className="h-full flex flex-col">
+    <motion.div
+      variants={cardVariants}
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
+      className="h-full"
+    >
+      <Spotlight className="h-full flex flex-col overflow-hidden">
         <div
-          className="contents"
+          className="relative w-full h-[180px] flex flex-col justify-end p-5 overflow-hidden"
+          style={{
+            background: `linear-gradient(135deg, ${gradient[0]} 0%, ${gradient[1]} 55%, ${gradient[2] || gradient[1]} 100%)`,
+          }}
         >
-          {/* 🔥 HEADER */}
+          {/* Soft sheen */}
           <div
-            className="relative w-full h-[170px] flex flex-col justify-end p-5"
+            aria-hidden
+            className="absolute inset-0 opacity-40"
             style={{
-              background: `linear-gradient(135deg, ${gradient[0]} 0%, ${gradient[1]} 60%, ${gradient[2] || gradient[1]} 100%)`,
+              background:
+                "radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.18), transparent 55%)",
             }}
-          >
-            {/* Project Name */}
-            <h3 className="text-white text-[19px] font-bold leading-tight">
+          />
+
+          <div className="relative z-[1]">
+            <h3 className="text-white text-[19px] font-bold leading-tight tracking-tight">
               {name}
             </h3>
-
-            {/* Tech Tags */}
-            <div className="flex flex-wrap gap-1.5 mt-2">
+            <div className="flex flex-wrap gap-1.5 mt-2.5">
               {tags.slice(0, 3).map((tag) => (
                 <span
                   key={tag.name}
-                  className="text-[10px] px-2 py-0.5 rounded-full bg-black/40 text-white/80"
+                  className="text-[10px] px-2 py-0.5 rounded-full bg-black/35 text-white/85 backdrop-blur-sm"
                 >
                   {tag.name}
                 </span>
               ))}
             </div>
+          </div>
 
-            {/* Actions */}
-            <div className="absolute top-3 right-3 flex gap-2">
-              {live_link && (
-                <button
-                  onClick={() => window.open(live_link, "_blank")}
-                  className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center"
-                >
-                  ↗
-                </button>
-              )}
+          <div className="absolute top-3 right-3 flex gap-2 z-[1]">
+            {live_link && (
               <button
-                onClick={() => window.open(source_code_link, "_blank")}
-                className="w-8 h-8 rounded-full bg-black/40 flex items-center justify-center"
+                type="button"
+                onClick={() => window.open(live_link, "_blank")}
+                aria-label={`Open ${name} live site`}
+                className="h-8 px-3 rounded-full bg-black/45 backdrop-blur-sm flex items-center gap-1.5 text-white/90 text-[11px] font-medium hover:bg-black/60 transition-colors"
               >
-                <img src={github} alt="github" className="w-4 h-4" />
+                Live <span aria-hidden>↗</span>
               </button>
-            </div>
-          </div>
-
-          {/* 🔥 CONTENT */}
-          <div className="p-5 flex flex-col flex-1">
-            {/* Type */}
-            {type && (
-              <span
-                className="text-[10px] px-2.5 py-0.5 rounded-full mb-3 font-bold uppercase"
-                style={{
-                  background: typeStyle.bg,
-                  border: `1px solid ${typeStyle.border}`,
-                  color: typeStyle.text,
-                }}
+            )}
+            {showGithub && (
+              <button
+                type="button"
+                onClick={() => window.open(source_code_link, "_blank")}
+                aria-label={`Open ${name} on GitHub`}
+                className="w-8 h-8 rounded-full bg-black/45 backdrop-blur-sm flex items-center justify-center hover:bg-black/60 transition-colors"
               >
-                {type}
-              </span>
-            )}
-
-            {/* Description */}
-            <p className="text-white/60 text-[13px] leading-relaxed flex-1">
-              {description}
-            </p>
-
-            {/* 🔥 IMPACT (KEY ADDITION) */}
-            {impact && (
-              <p className="text-[#10b981] text-[11px] mt-3 font-medium">
-                {impact}
-              </p>
+                <img src={github} alt="" className="w-4 h-4" />
+              </button>
             )}
           </div>
+        </div>
+
+        <div className="p-5 flex flex-col flex-1">
+          {type && (
+            <span
+              className="self-start text-[10px] px-2.5 py-0.5 rounded-full mb-3 font-bold uppercase tracking-wide"
+              style={{
+                background: typeStyle.bg,
+                border: `1px solid ${typeStyle.border}`,
+                color: typeStyle.text,
+              }}
+            >
+              {type}
+            </span>
+          )}
+
+          <p className="text-white/60 text-[13px] leading-relaxed flex-1">
+            {description}
+          </p>
+
+          {impact && (
+            <p className="text-[#10b981] text-[12px] mt-4 font-medium tracking-tight border-t border-white/[0.06] pt-3">
+              {impact}
+            </p>
+          )}
         </div>
       </Spotlight>
     </motion.div>
@@ -130,25 +143,19 @@ const ProjectCard = ({
 const Works = () => {
   return (
     <>
-      {/* 🔥 HEADER */}
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Selected Work</p>
-
-        <h2 className={styles.sectionHeadText}>
-          Production & Engineering Projects
-        </h2>
+        <h2 className={styles.sectionHeadText}>Projects that ship.</h2>
       </motion.div>
 
-      {/* 🔥 DESCRIPTION */}
       <motion.p
         variants={fadeIn("", "", 0.1, 0.8)}
         className="mt-4 text-white/60 text-[15px] max-w-2xl leading-relaxed"
       >
-        Projects demonstrating scalable architecture, performance optimization,
-        and real-world problem solving across frontend and backend systems.
+        Live products and engineering builds — architecture, motion, and
+        real-world problem solving across the stack.
       </motion.p>
 
-      {/* 🔥 GRID */}
       <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />

@@ -1,7 +1,5 @@
 import React from "react";
-
-const LINKEDIN = "https://www.linkedin.com/in/pavan-kusunuri";
-const GITHUB = "https://github.com/PavanKusunuri";
+import { LINKEDIN, GITHUB } from "../constants";
 
 const Footer = () => (
   <footer

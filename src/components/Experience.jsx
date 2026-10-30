@@ -6,69 +6,11 @@ import {
 
 import "react-vertical-timeline-component/style.min.css";
 
-import { aero_logo, oc_logo, Valuelabs_logo } from "../assets";
+import { experiences } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { styles } from "../styles";
 import { textVariant } from "../utils/motion";
 
-/**
- * EXPERIENCE DATA — rewritten using resume (impact-focused)
- */
-const experiences = [
-  {
-    title: "Senior Software Engineer",
-    company_name: "ValueLabs",
-    date: "Feb 2024 – Present",
-    icon: Valuelabs_logo,
-    iconBg: "#ffffff",
-    highlights: "High-scale financial systems • Performance optimization",
-    points: [
-      "Designed and developed financial platforms handling large-scale transaction workflows",
-      "Built scalable REST APIs using Node.js (Express) and optimized data handling to reduce latency",
-      "Improved system performance by identifying bottlenecks and optimizing database queries",
-      "Developed reusable React components for scalable frontend architecture",
-      "Implemented tracking systems across multiple customers and payment channels",
-      "Mentored junior engineers and improved code quality through reviews",
-    ],
-    techStack: ["React", "Node.js", "PostgreSQL", "REST APIs"],
-  },
-  {
-    title: "Software Engineer",
-    company_name: "Oracle Cerner",
-    date: "Jan 2022 – Feb 2024",
-    icon: oc_logo,
-    iconBg: "#ffffff",
-    highlights: "Enterprise healthcare platform • Secure systems",
-    points: [
-      "Worked on enterprise healthcare platform supporting large-scale user base",
-      "Implemented role-based access control (RBAC) for secure system access",
-      "Developed modules for license and product management systems",
-      "Resolved critical production issues ensuring high system reliability",
-      "Collaborated with cross-functional teams to deliver scalable solutions",
-    ],
-    techStack: ["React", "Node.js", "RBAC", "Enterprise Systems"],
-  },
-  {
-    title: "Software Development Engineer",
-    company_name: "AeroSimple",
-    date: "Dec 2019 – Jan 2022",
-    icon: aero_logo,
-    iconBg: "#ffffff",
-    highlights: "SaaS platform • Multi-airport operations",
-    points: [
-      "Scaled aviation SaaS platform to support multiple airport operations",
-      "Built backend APIs using Django REST Framework for operational workflows",
-      "Standardized frontend architecture using React for improved maintainability",
-      "Removed legacy UI code and improved rendering performance",
-      "Optimized backend APIs reducing unnecessary data transfer",
-    ],
-    techStack: ["React", "Django", "REST APIs", "SaaS"],
-  },
-];
-
-/**
- * CARD COMPONENT
- */
 const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
@@ -91,19 +33,21 @@ const ExperienceCard = ({ experience }) => {
         </div>
       }
       iconStyle={{
-        background: experience.iconBg,
-        boxShadow: "0 0 0 3px rgba(16,185,129,0.25)",
-        width: 48,
-        height: 48,
+        background: experience.iconBg || "#0B1220",
+        boxShadow: "0 0 0 3px rgba(16,185,129,0.3)",
+        width: 56,
+        height: 56,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        overflow: "hidden",
+        padding: 0,
       }}
       icon={
         <img
           src={experience.icon}
           alt={experience.company_name}
-          className="w-6 h-6 object-contain"
+          className="w-[56px] h-[56px] object-cover"
           loading="lazy"
         />
       }
@@ -111,7 +55,7 @@ const ExperienceCard = ({ experience }) => {
       <h3 className="text-white text-[18px] font-semibold">
         {experience.title}
       </h3>
-      <p className="text-emerald-400 text-[14px] font-medium mt-1">
+      <p className="text-emerald-400 text-[14px] font-medium mt-1 !mb-0">
         {experience.company_name}
       </p>
       <p className="text-white/40 text-[12px] mt-1">{experience.highlights}</p>
@@ -145,9 +89,7 @@ const ExperienceCard = ({ experience }) => {
     </VerticalTimelineElement>
   );
 };
-/**
- * MAIN COMPONENT
- */
+
 const Experience = () => {
   return (
     <>
@@ -155,16 +97,15 @@ const Experience = () => {
         <p className={`${styles.sectionSubText} text-center`}>
           Professional Journey
         </p>
-
         <h2 className={`${styles.sectionHeadText} text-center`}>
-          Building Scalable Systems Across Industries
+          Experience that compounds.
         </h2>
       </motion.div>
 
       <div className="mt-16">
         <VerticalTimeline lineColor="rgba(16,185,129,0.25)">
           {experiences.map((exp, index) => (
-            <ExperienceCard key={index} experience={exp} />
+            <ExperienceCard key={`${exp.company_name}-${index}`} experience={exp} />
           ))}
         </VerticalTimeline>
       </div>

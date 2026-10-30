@@ -5,8 +5,6 @@ import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { textVariant, fadeIn } from "../utils/motion";
 
-const EASE = [0.16, 1, 0.3, 1];
-
 const testimonials = [
   {
     quote:
@@ -43,29 +41,32 @@ const TestimonialCard = ({ index, quote, name, title, company }) => {
       variants={cardVariants}
       className="w-full sm:w-[350px] flex-1 min-w-[280px]"
     >
-      <div
-        className="min-h-[280px] rounded-2xl p-6 flex flex-col justify-between"
+      <motion.div
+        whileHover={{ y: -4 }}
+        transition={{ duration: 0.25 }}
+        className="min-h-[280px] rounded-2xl p-6 flex flex-col justify-between h-full"
         style={{
           background: "rgba(255,255,255,0.03)",
           border: "1px solid rgba(255,255,255,0.07)",
           backdropFilter: "blur(12px)",
         }}
       >
-        {/* Quote */}
-        <p className="text-white/70 text-[14px] leading-relaxed mb-4">
-          "{quote}"
-        </p>
-
-        {/* Divider */}
-        <div className="w-12 h-[1px] bg-gradient-to-r from-[#10b981] to-transparent mb-4" />
-
-        {/* Author */}
         <div>
+          <span className="text-[#10b981]/50 text-[28px] leading-none font-serif" aria-hidden>
+            “
+          </span>
+          <p className="text-white/70 text-[14px] leading-relaxed -mt-2">
+            {quote}
+          </p>
+        </div>
+
+        <div>
+          <div className="w-12 h-[1px] bg-gradient-to-r from-[#10b981] to-transparent mb-4" />
           <p className="text-white font-semibold text-[15px]">{name}</p>
           <p className="text-[#10b981] text-[12px] font-medium">{title}</p>
           <p className="text-white/40 text-[12px] mt-0.5">{company}</p>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 };
@@ -79,17 +80,16 @@ const Testimonials = () => {
         <p className={styles.sectionSubText}>What people say</p>
 
         <h2 className={styles.sectionHeadText}>
-          Recognition from Industry Leaders
+          From people I&apos;ve shipped with.
         </h2>
       </motion.div>
 
-      {/* Description */}
       <motion.p
         variants={fadeIn("", "", 0.1, 0.8)}
         className="mt-4 text-white/60 text-[15px] max-w-2xl leading-relaxed"
       >
-        Testimonials from engineering managers and CTOs I've worked with across
-        financial, healthcare, and SaaS platforms.
+        Notes from managers and a CTO across finance, healthcare, and SaaS —
+        focused on ownership, reliability, and delivery.
       </motion.p>
 
       {/* Cards */}

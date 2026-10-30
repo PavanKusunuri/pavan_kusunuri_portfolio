@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
+import { EMAIL, GITHUB, LINKEDIN } from "../constants";
 import { slideIn } from "../utils/motion";
 import { downloadResume } from "../utils/resumeDownload";
 
@@ -55,7 +56,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Pavan Kusunuri",
           from_email: form.email,
-          to_email: "pavantejakusunuri@gmail.com",
+          to_email: EMAIL,
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
@@ -87,19 +88,17 @@ const Contact = () => {
         <p className={styles.sectionSubText}>Open to Opportunities</p>
 
         <h3 className={`${styles.sectionHeadText} mt-1`}>
-          Let’s Build Something Scalable Together
+          Let&apos;s talk.
         </h3>
 
         <p className="text-white/50 text-[14px] mt-3 max-w-lg leading-relaxed">
-          I’m currently open to{" "}
+          Open to{" "}
           <span className="text-white font-medium">
             Senior Full-Stack Engineer
           </span>{" "}
-          roles where I can contribute to scalable systems, performance
-          optimization, and production-grade applications.
+          roles — scalable systems, performance work, and production delivery.
         </p>
 
-        {/* 🔥 AVAILABILITY */}
         <div
           className="mt-4 inline-flex items-center gap-2 px-3 py-1.5 rounded-full"
           style={{
@@ -109,19 +108,20 @@ const Contact = () => {
         >
           <span className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse" />
           <span className="text-[#10b981] text-[12px] font-medium">
-            Actively open to full-time roles • Immediate joiner
+            Open to full-time · Immediate joiner
           </span>
         </div>
 
-        {/* 🔥 DIRECT CONTACT */}
-        <div className="mt-4 text-[13px] text-white/50">
-          📧 pavantejakusunuri@gmail.com
-        </div>
+        <a
+          href={`mailto:${EMAIL}`}
+          className="mt-4 inline-block text-[13px] text-white/55 hover:text-[#10b981] transition-colors"
+        >
+          {EMAIL}
+        </a>
 
-        {/* 🔥 SOCIAL LINKS */}
         <div className="flex items-center gap-3 mt-3 mb-6">
           <a
-            href="https://www.linkedin.com/in/pavan-kusunuri"
+            href={LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/50 hover:text-white text-[13px]"
@@ -130,7 +130,7 @@ const Contact = () => {
           </a>
           <span className="text-white/10">|</span>
           <a
-            href="https://github.com/PavanKusunuri"
+            href={GITHUB}
             target="_blank"
             rel="noopener noreferrer"
             className="text-white/50 hover:text-white text-[13px]"
@@ -228,7 +228,7 @@ const Contact = () => {
                 onClick={downloadResume}
                 className="apple-btn glass px-6 py-3 text-[14px]"
               >
-                ⬇ Download Resume
+                Download Resume
               </button>
             </div>
 

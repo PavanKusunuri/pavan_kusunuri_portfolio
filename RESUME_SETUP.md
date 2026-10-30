@@ -1,28 +1,21 @@
 # Resume Download Setup
 
-## Instructions:
+The live download button serves this file:
 
-1. **Save your resume as:** `Pavan_Kusunuri_Resume.pdf`
+```
+public/Pavan_Kusunuri_Resume.pdf
+```
 
-2. **Place it in the `public/` folder** of your project:
-   ```
-   public/
-   ├── Pavan_Kusunuri_Resume.pdf  ← Place your PDF here
-   └── logo.svg
-   ```
+## Update the resume
 
-3. **Commit to Git** (make sure `.gitignore` allows PDFs in public folder)
+1. Replace `public/Pavan_Kusunuri_Resume.pdf` with your latest PDF
+2. Keep the filename exactly `Pavan_Kusunuri_Resume.pdf` (the site links to that path)
+3. Downloaded filename for users: `Pavan_Kusunuri_Resume_6YOE_Fullstack.pdf`
 
-4. **Test locally:**
-   - Run `npm run dev`
-   - Check the navbar for "Download Resume" button
-   - Click to verify download works
+## Verify
 
-5. **For production deployment:**
-   - Ensure the PDF is included in your build output
-   - Vercel and most hosting platforms automatically include `public/` folder in deployment
+```bash
+npm run dev
+```
 
-## Recommended Resume Format:
-- Use professional formatting with your name as the filename
-- Keep it under 2MB for faster downloads
-- Ensure it's readable on all devices
+Click **Download Resume** in the navbar or hero and confirm the PDF opens/downloads.

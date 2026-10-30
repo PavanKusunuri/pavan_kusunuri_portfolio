@@ -2,12 +2,9 @@
 import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
-import { navLinks } from "../constants";
+import { navLinks, LINKEDIN, GITHUB } from "../constants";
 import { menu, close } from "../assets";
 import { downloadResume } from "../utils/resumeDownload";
-
-const LINKEDIN = "https://www.linkedin.com/in/pavan-kusunuri";
-const GITHUB = "https://github.com/PavanKusunuri";
 
 const SocialIcon = ({ href, label, children }) => (
   <a
