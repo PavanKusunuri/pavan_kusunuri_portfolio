@@ -127,8 +127,8 @@ body::after {
 }
 
 .spotlight:hover {
-  border-color: rgba(16, 185, 129, 0.35);
-  transform: translateY(-2px);
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
 }
 
 .spotlight:hover::before {
@@ -180,11 +180,25 @@ body::after {
   position: fixed;
   top: 0;
   left: 0;
-  height: 3px;
+  height: 2.5px;
+  width: 100%;
   background: linear-gradient(90deg, #10b981 0%, #06b6d4 100%);
-  transform-origin: left;
+  transform-origin: 0% 50%;
   z-index: 100;
   pointer-events: none;
+}
+
+.tilt-card {
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card {
+    transform: none !important;
+    transition: none !important;
+  }
 }
 
 /* ─── Emerald shimmer gradient text ─── */

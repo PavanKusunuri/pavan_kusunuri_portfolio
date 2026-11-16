@@ -1,7 +1,5 @@
 import { aerosimple, oracleCerner, valuelabs } from "../assets";
 import awsLambda from "../assets/tech/aws-lambda.svg";
-import cloudwatch from "../assets/tech/cloudwatch.svg";
-import newrelic from "../assets/tech/newrelic.svg";
 
 /* Transparent SVG icons via Devicons CDN — crisp at any size, no black boxes */
 const DI = "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons";
@@ -34,15 +32,15 @@ export const services = [
     icon: "api",
   },
   {
-    title: "Cloud & Monitoring",
+    title: "Feature Development",
     description:
-      "AWS Lambda jobs, CloudWatch, and New Relic for live incident support.",
+      "Ship UI, APIs, and Lambda workflows for business applications.",
     icon: "cloud",
   },
   {
-    title: "Production Reliability",
+    title: "Production Fixes",
     description:
-      "L1/L2 troubleshooting, partner feeds, and batch-job recovery.",
+      "Debug application issues and deliver stable releases in production.",
     icon: "reliability",
   },
 ];
@@ -66,8 +64,6 @@ export const technologies = [
   { name: "PostgreSQL", icon: icon("postgresql/postgresql-original.svg") },
   { name: "MongoDB", icon: icon("mongodb/mongodb-original.svg") },
   { name: "AWS Lambda", icon: awsLambda },
-  { name: "CloudWatch", icon: cloudwatch },
-  { name: "New Relic", icon: newrelic },
   { name: "Git", icon: icon("git/git-original.svg") },
   { name: "GitHub", icon: icon("github/github-original.svg") },
   { name: "CI/CD", icon: icon("githubactions/githubactions-original.svg") },
@@ -97,17 +93,13 @@ export const techCategories = [
       "Python",
       "Django / DRF",
       "Ruby on Rails",
+      "AWS Lambda",
     ],
   },
   {
     label: "Databases",
     description: "Persistent data for product and ops workflows",
     techs: ["PostgreSQL", "MongoDB"],
-  },
-  {
-    label: "Cloud & Monitoring",
-    description: "Serverless processing and production observability",
-    techs: ["AWS Lambda", "CloudWatch", "New Relic"],
   },
   {
     label: "Engineering Tools",
@@ -125,17 +117,16 @@ export const experiences = [
     date: "Feb 2024 – Present · Hyderabad",
     icon: valuelabs,
     iconBg: "#0B1F1C",
-    highlights: "Financial services · AWS Lambda · New Relic / CloudWatch",
+    highlights: "Financial services · React / Node.js · feature development",
     points: [
-      "Contribute to a financial-services platform with React and Node.js — enhancements and production issue resolution",
-      "Build React screens and operational dashboards for financial and partner-processing visibility",
-      "Develop and maintain AWS Lambda functions for batch-oriented processing and data workflows",
-      "Troubleshoot batch-job failures and partner data-feed issues to restore processing and availability",
-      "Support a partner-monitoring app tracking data volumes, partner status, failures, and downtime",
-      "Use New Relic and Amazon CloudWatch to investigate anomalies and support incident resolution",
-      "Resolve L1/L2 issues including payment-status checks, bank-maintenance incidents, and portal support",
+      "Build and enhance a financial-services platform with React and Node.js — new features and production bug fixes",
+      "Develop React screens and operational dashboards for financial and partner-processing workflows",
+      "Develop AWS Lambda functions for batch-oriented processing and related data workflows",
+      "Troubleshoot batch-job failures and partner data-feed issues to restore expected processing",
+      "Ship enhancements for internal business applications, including payment-status and portal workflows",
+      "Investigate API and database issues and coordinate with teams to drive them to resolution",
     ],
-    techStack: ["React", "Node.js", "AWS Lambda", "CloudWatch", "New Relic"],
+    techStack: ["React", "Node.js", "AWS Lambda", "REST APIs"],
   },
   {
     title: "Software Engineer",
@@ -158,7 +149,7 @@ export const experiences = [
     date: "Dec 2019 – Jan 2022 · Visakhapatnam",
     icon: aerosimple,
     iconBg: "#FFFFFF",
-    highlights: "Aviation SaaS · microservices · React/TypeScript",
+    highlights: "Aviation SaaS (formerly UnoSimple) · microservices · React/TypeScript",
     points: [
       "Built aviation SaaS features with React, Python, Django REST Framework, Node.js, and Express",
       "Contributed to microservice-based airport operations and related workflows",
@@ -173,7 +164,7 @@ export const experiences = [
     date: "Sep 2019 – Dec 2019 · Visakhapatnam",
     icon: aerosimple,
     iconBg: "#FFFFFF",
-    highlights: "Early-stage product · full-stack foundations",
+    highlights: "AeroSimple predecessor · early-stage product",
     points: [
       "Contributed to early-stage product development and built foundational experience in React.js, Node.js, and full-stack engineering",
     ],

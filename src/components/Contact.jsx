@@ -5,7 +5,7 @@ import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { EMAIL, GITHUB, LINKEDIN } from "../constants";
-import { slideIn } from "../utils/motion";
+import { fadeIn } from "../utils/motion";
 import { downloadResume } from "../utils/resumeDownload";
 
 const Contact = () => {
@@ -76,7 +76,7 @@ const Contact = () => {
   return (
     <div className="w-full flex justify-center">
       <motion.div
-        variants={slideIn("left", "tween", 0.2, 0.8)}
+        variants={fadeIn("up", "tween", 0.12, 0.75)}
         className="w-full max-w-2xl rounded-2xl p-6 sm:p-8 lg:p-10"
         style={{
           background: "rgba(255,255,255,0.04)",

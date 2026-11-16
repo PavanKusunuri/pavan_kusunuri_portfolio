@@ -98,14 +98,13 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 0.8)}
         className="mt-5 text-[rgba(255,255,255,0.6)] text-[16px] max-w-3xl leading-[1.8] tracking-tight"
       >
-        Senior Software Engineer with 6+ years across financial services,
-        healthcare, and aviation SaaS. Full-stack background in{" "}
+        Senior Software Engineer with 7+ years across financial services,
+        healthcare, and aviation SaaS. Full-stack development in{" "}
         <span className="text-[#6ee7b7] font-medium">React</span>,{" "}
         <span className="text-[#6ee7b7] font-medium">Node.js</span>,{" "}
         <span className="text-[#6ee7b7] font-medium">Python/Django</span>, and
-        REST APIs — with hands-on AWS Lambda processing, production
-        troubleshooting, and monitoring of application and partner-data
-        workflows at{" "}
+        REST APIs — shipping features, fixing production bugs, and owning
+        end-to-end delivery at{" "}
         <span className="text-[#6ee7b7] font-medium">ValueLabs</span>,{" "}
         <span className="text-[#6ee7b7] font-medium">Oracle Cerner</span>, and{" "}
         <span className="text-[#6ee7b7] font-medium">AeroSimple</span>.

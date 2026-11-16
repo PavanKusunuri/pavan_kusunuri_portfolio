@@ -3,6 +3,7 @@ import { BrowserRouter } from "react-router-dom";
 
 import { Navbar, Hero } from "./components";
 import Footer from "./components/Footer";
+import ParallaxBackdrop from "./components/ParallaxBackdrop";
 
 const Stats = lazy(() => import("./components/Stats"));
 const About = lazy(() => import("./components/About"));
@@ -17,36 +18,34 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        {/* Above-the-fold */}
-        <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
+        <ParallaxBackdrop />
+        <div className="relative z-[1] bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <Hero />
         </div>
 
-        {/* Stats counter — between hero and about */}
-        <Suspense fallback={null}>
-          <Stats />
-        </Suspense>
+        <div className="relative z-[1]">
+          <Suspense fallback={null}>
+            <Stats />
+          </Suspense>
+          <Suspense fallback={null}>
+            <About />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Experience />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Tech />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Works />
+          </Suspense>
+          <Suspense fallback={null}>
+            <Testimonials />
+          </Suspense>
+        </div>
 
-        <Suspense fallback={null}>
-          <About />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Experience />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Tech />
-        </Suspense>
-        <Suspense fallback={null}>
-          <Works />
-        </Suspense>
-
-        {/* Testimonials — between works and contact */}
-        <Suspense fallback={null}>
-          <Testimonials />
-        </Suspense>
-
-        <div className="relative z-0">
+        <div className="relative z-[1]">
           <Suspense fallback={null}>
             <Contact />
           </Suspense>
@@ -55,7 +54,9 @@ const App = () => {
           </Suspense>
         </div>
 
-        <Footer />
+        <div className="relative z-[1]">
+          <Footer />
+        </div>
       </div>
     </BrowserRouter>
   );

@@ -1,10 +1,12 @@
 ﻿import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, useScroll, useSpring } from "framer-motion";
 
-import { styles } from "../styles";
 import { navLinks, LINKEDIN, GITHUB } from "../constants";
 import { menu, close } from "../assets";
 import { downloadResume } from "../utils/resumeDownload";
+import Magnetic from "./Magnetic";
+import { GitHubIcon, LinkedInIcon } from "./icons";
 
 const SocialIcon = ({ href, label, children }) => (
   <a
@@ -22,69 +24,76 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [scrollProgress, setScrollProgress] = useState(0);
+  const { scrollYProgress } = useScroll();
+  const progress = useSpring(scrollYProgress, {
+    stiffness: 120,
+    damping: 30,
+    restDelta: 0.001,
+  });
 
-  // 🔥 Scroll tracking + active section detection (optimized)
   useEffect(() => {
-    // Cache sections only once
-    const sections = navLinks
-      .map((nav) => document.getElementById(nav.id))
-      .filter(Boolean);
-    const sectionOffsets = sections.map((section) => ({
-      top: section.offsetTop - 120,
-      height: section.offsetHeight,
-    }));
+    const measure = () =>
+      navLinks
+        .map((nav) => {
+          const el = document.getElementById(nav.id);
+          if (!el) return null;
+          return {
+            id: nav.id,
+            title: nav.title,
+            top: el.offsetTop - 140,
+            bottom: el.offsetTop + el.offsetHeight - 140,
+          };
+        })
+        .filter(Boolean);
+
+    let sections = measure();
+    const refresh = () => {
+      sections = measure();
+    };
 
     let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          const scrollY = window.scrollY;
-
-          setScrolled(scrollY > 60);
-
-          // Calculate progress
-          const docHeight =
-            document.documentElement.scrollHeight - window.innerHeight;
-          setScrollProgress((scrollY / docHeight) * 100);
-
-          // Active section detection (optimized: no DOM queries in loop)
-          for (let i = 0; i < sectionOffsets.length; i++) {
-            const { top, height } = sectionOffsets[i];
-            if (scrollY >= top && scrollY < top + height) {
-              setActive(navLinks[i].title);
-              break;
-            }
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(() => {
+        const y = window.scrollY;
+        setScrolled(y > 40);
+        for (let i = sections.length - 1; i >= 0; i -= 1) {
+          if (y >= sections[i].top) {
+            setActive(sections[i].title);
+            break;
           }
-
-          ticking = false;
-        });
-
-        ticking = true;
-      }
+        }
+        ticking = false;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", refresh);
+    const t = window.setTimeout(refresh, 600);
+    handleScroll();
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", refresh);
+      window.clearTimeout(t);
+    };
   }, []);
 
   return (
     <>
-      {/* Scroll Progress */}
-      <div
-        className="scroll-progress"
-        style={{ width: `${scrollProgress}%` }}
-      />
+      <motion.div className="scroll-progress" style={{ scaleX: progress }} />
 
       <nav className="fixed top-3 sm:top-4 left-0 w-full z-20 px-3 sm:px-6">
         <div
-          className={`max-w-5xl mx-auto flex justify-between items-center rounded-full pl-5 pr-3 py-2.5 transition-all duration-300 ${
+          className={`max-w-5xl mx-auto flex justify-between items-center rounded-full pl-5 pr-3 py-2.5 transition-all duration-500 ease-apple-spring ${
             scrolled ? "nav-pill" : "bg-transparent border border-transparent"
           }`}
         >
-          {/* 🔥 Logo (Improved branding) */}
-          <Link to="/" className="flex flex-col leading-tight">
+          <Link
+            to="/"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            className="flex flex-col leading-tight"
+          >
             <span className="text-white font-semibold text-[16px] tracking-tight">
               Pavan Kusunuri
             </span>
@@ -93,59 +102,56 @@ const Navbar = () => {
             </span>
           </Link>
 
-          {/* Desktop */}
           <ul className="hidden sm:flex items-center gap-6">
             {navLinks.map((nav) => (
               <li key={nav.id}>
                 <a
                   href={`#${nav.id}`}
-                  className={`text-[14px] font-medium ${
+                  className={`relative text-[14px] font-medium transition-colors ${
                     active === nav.title
                       ? "text-white"
                       : "text-white/50 hover:text-white"
                   }`}
                 >
                   {nav.title}
+                  {active === nav.title && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-[#10b981]"
+                    />
+                  )}
                 </a>
               </li>
             ))}
 
-            {/* Social */}
             <li className="flex gap-2">
               <SocialIcon href={LINKEDIN} label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-                  <rect x="2" y="9" width="4" height="12" />
-                  <circle cx="4" cy="4" r="2" />
-                </svg>
+                <LinkedInIcon size={14} />
               </SocialIcon>
-
               <SocialIcon href={GITHUB} label="GitHub">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
-                </svg>
+                <GitHubIcon size={14} />
               </SocialIcon>
             </li>
 
-            {/* 🔥 Strong CTA */}
             <li>
-              <button
-                onClick={downloadResume}
-                className="apple-btn apple-btn-primary px-5 py-2 text-[14px]"
-              >
-                Download Resume
-              </button>
+              <Magnetic strength={0.2}>
+                <button
+                  onClick={downloadResume}
+                  className="apple-btn apple-btn-primary px-5 py-2 text-[14px]"
+                >
+                  Download Resume
+                </button>
+              </Magnetic>
             </li>
           </ul>
 
-          {/* Mobile */}
           <div className="sm:hidden relative">
-            <button onClick={() => setToggle(!toggle)}>
-              <img src={toggle ? close : menu} className="w-5 h-5" />
+            <button type="button" onClick={() => setToggle(!toggle)} aria-label="Toggle menu">
+              <img src={toggle ? close : menu} className="w-5 h-5" alt="" />
             </button>
 
             {toggle && (
-              <div className="absolute right-0 top-14 nav-pill p-5 rounded-2xl">
+              <div className="absolute right-0 top-14 nav-pill p-5 rounded-2xl min-w-[180px]">
                 <ul className="flex flex-col gap-4">
                   {navLinks.map((nav) => (
                     <li key={nav.id}>
@@ -158,7 +164,6 @@ const Navbar = () => {
                       </a>
                     </li>
                   ))}
-
                   <li>
                     <button
                       onClick={downloadResume}

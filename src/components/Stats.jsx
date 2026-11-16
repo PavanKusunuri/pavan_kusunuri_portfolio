@@ -5,10 +5,10 @@ import Spotlight from "./Spotlight";
 const EASE = [0.16, 1, 0.3, 1];
 
 const stats = [
-  { value: 6, suffix: "+", label: "Years Experience" },
+  { value: 7, suffix: "+", label: "Years Experience" },
   { value: 500, suffix: "", label: "Calculators Shipped" },
   { value: 3, suffix: "", label: "Industries" },
-  { value: 4, suffix: "", label: "Companies" },
+  { value: 4, suffix: "", label: "Engineering Roles" },
 ];
 
 const useCountUp = (target, inView, duration = 1200) => {

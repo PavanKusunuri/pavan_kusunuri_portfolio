@@ -4,14 +4,14 @@ const APPLE_EASE_OUT = [0.25, 0.46, 0.45, 0.94];
 
 export const textVariant = (delay) => {
   return {
-    hidden: { y: 24, opacity: 0 },
+    hidden: { y: 28, opacity: 0 },
     show: {
       y: 0,
       opacity: 1,
       transition: {
         type: "tween",
         ease: APPLE_EASE,
-        duration: 0.65,
+        duration: 0.85,
         delay: delay || 0,
       },
     },
@@ -21,8 +21,8 @@ export const textVariant = (delay) => {
 export const fadeIn = (direction, type, delay, duration) => {
   return {
     hidden: {
-      x: direction === "left" ? 60 : direction === "right" ? -60 : 0,
-      y: direction === "up" ? 60 : direction === "down" ? -60 : 0,
+      x: direction === "left" ? 40 : direction === "right" ? -40 : 0,
+      y: direction === "up" ? 36 : direction === "down" ? -36 : 0,
       opacity: 0,
     },
     show: {
@@ -30,9 +30,9 @@ export const fadeIn = (direction, type, delay, duration) => {
       y: 0,
       opacity: 1,
       transition: {
-        type: type,
+        type: type || "tween",
         delay: delay,
-        duration: duration,
+        duration: duration || 0.7,
         ease: APPLE_EASE,
       },
     },

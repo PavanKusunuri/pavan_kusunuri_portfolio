@@ -61,11 +61,11 @@ const Tech = () => {
         <p className={styles.sectionSubText}>Engineering Capabilities</p>
         <h2 className={styles.sectionHeadText}>Stack I ship with.</h2>
         <p className="text-white/50 text-[14px] max-w-2xl mx-auto mt-4 leading-relaxed">
-          Skills from my resume — frontend, backend, cloud, monitoring, and the
-          tools I use to ship and support production systems.
+          Frontend, backend, and cloud tools I use to build and ship
+          production applications.
         </p>
         <p className="text-[#10b981] text-[13px] font-medium mt-3">
-          React · Node.js · Python · Django · AWS Lambda · New Relic
+          React · Node.js · Python · Django · TypeScript · REST APIs
         </p>
       </motion.div>
 
